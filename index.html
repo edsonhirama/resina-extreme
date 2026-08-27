@@ -1,1498 +1,228 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+﻿<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Resina Extreme: renove o visual do seu carro com brilho intenso. Você recebe em casa e só paga na entrega. Sem cartão, sem pagamento antecipado, frete grátis.">
-<meta name="theme-color" content="#05070d">
-<title>Resina Extreme | Você Recebe Primeiro e Só Paga Depois</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;800;900&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-<style>
-/* ============================================================
-   RESINA EXTREME — COD Landing Page
-   Mobile First · Premium Automotivo · Foco em Conversão
-   Paleta: Preto / Branco / Azul Escuro / Verde (CTA)
-   ============================================================ */
-:root{
-  --bg:#05070d;
-  --bg2:#0a101d;
-  --panel:#0d1524;
-  --panel2:#101b30;
-  --panel3:#131f38;
-  --line:#1d2a44;
-  --line2:#26355a;
-  --blue:#1e40af;
-  --blue-l:#2b6de0;
-  --blue-grad:linear-gradient(135deg,#16285a 0%,#1e40af 100%);
-  --green:#22c55e;
-  --green-l:#34d97a;
-  --green-d:#16a34a;
-  --green-ink:#041f10;
-  --text:#f2f5fb;
-  --muted:#9aa7bd;
-  --gold:#fbbf24;
-  --red:#ef4444;
-  --radius:18px;
-  --radius-sm:12px;
-  --shadow:0 18px 40px rgba(0,0,0,.45);
-  --shadow-g:0 12px 30px rgba(34,197,94,.35);
-  --maxw:1060px;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  font-family:'Nunito Sans',system-ui,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.55;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
-  padding-bottom:76px;
-}
-h1,h2,h3,h4,.display{font-family:'Rubik',sans-serif;line-height:1.15;letter-spacing:-.01em}
-img,svg{display:block;max-width:100%}
-a{text-decoration:none;color:inherit}
-button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 16px}
-
-/* ---------- Buttons / CTA ---------- */
-.cta{
-  display:inline-flex;align-items:center;justify-content:center;gap:10px;
-  width:100%;padding:18px 20px;border-radius:16px;
-  background:linear-gradient(180deg,var(--green-l),var(--green));
-  color:var(--green-ink);font-family:'Rubik';font-weight:800;font-size:16px;
-  line-height:1.25;text-align:center;letter-spacing:.01em;
-  box-shadow:var(--shadow-g);border:1px solid rgba(255,255,255,.25);
-  transition:transform .15s ease,filter .15s ease,box-shadow .15s ease;
-  touch-action:manipulation;
-}
-.cta svg{flex:none;width:22px;height:22px}
-.cta:active{transform:scale(.97)}
-.cta:hover{filter:brightness(1.06);box-shadow:0 16px 38px rgba(34,197,94,.45)}
-.cta .small{display:block;font-family:'Nunito Sans';font-weight:700;font-size:11px;opacity:.85;letter-spacing:.02em}
-.cta-block{max-width:520px;margin:0 auto}
-
-/* ---------- Top fixed bar ---------- */
-.topbar{
-  position:fixed;top:0;left:0;right:0;z-index:90;
-  background:linear-gradient(90deg,#0b3d1a,#115e2c 55%,#0b3d1a);
-  border-bottom:1px solid rgba(255,255,255,.12);
-  box-shadow:0 4px 18px rgba(0,0,0,.35);
-}
-.topbar .row{
-  max-width:var(--maxw);margin:0 auto;
-  display:grid;grid-template-columns:repeat(3,1fr);gap:4px;
-  padding:9px 10px;
-}
-.tb-item{
-  display:flex;align-items:center;justify-content:center;gap:6px;
-  font-size:10px;font-weight:800;text-align:center;line-height:1.2;
-  color:#eafff1;letter-spacing:.02em;
-}
-.tb-item svg{width:17px;height:17px;flex:none;color:var(--green-l)}
-.tb-item span{opacity:.95}
-@media(min-width:640px){
-  .tb-item{font-size:12px;gap:8px}
-  .topbar .row{padding:11px 24px}
-}
-
-/* ---------- Hero ---------- */
-.hero{
-  position:relative;
-  padding:74px 0 0;
-  background:
-    radial-gradient(120% 90% at 50% -10%,#13264f 0%,rgba(19,38,79,0) 55%),
-    radial-gradient(90% 60% at 85% 110%,#0e2a1a 0%,rgba(14,42,26,0) 60%),
-    var(--bg);
-}
-.hero-inner{text-align:center;padding:26px 0 34px}
-.pill{
-  display:inline-flex;align-items:center;gap:8px;
-  background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.35);
-  color:var(--green-l);font-weight:800;font-size:12px;letter-spacing:.03em;
-  padding:8px 14px;border-radius:999px;margin-bottom:16px;
-}
-.pill svg{width:16px;height:16px}
-.hero h1{
-  font-size:clamp(30px,8.2vw,52px);font-weight:900;
-  margin:0 auto 14px;max-width:16ch;
-}
-.hero h1 .green{color:var(--green-l)}
-.hero h1 .underline{color:var(--text)}
-.hero-sub{
-  color:var(--muted);font-size:clamp(16px,4.4vw,19px);font-weight:600;
-  max-width:34ch;margin:0 auto 20px;
-}
-.hero-sub strong{color:var(--text)}
-.hero-benefits{
-  display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:0 0 22px;
-}
-.hb-chip{
-  display:inline-flex;align-items:center;gap:7px;
-  background:var(--panel);border:1px solid var(--line);
-  border-radius:999px;padding:8px 13px;font-size:13px;font-weight:700;
-}
-.hb-chip svg{width:16px;height:16px;color:var(--green);flex:none}
-.hero-cta-note{margin-top:12px;font-size:13px;color:var(--muted);font-weight:700}
-.hero-cta-note svg{width:14px;height:14px;display:inline-block;vertical-align:-2px;color:var(--green)}
-
-/* Hero video mock (9:16 vertical) */
-.hero-video{
-  margin:0 auto 30px;max-width:280px;
-  position:relative;border-radius:22px;overflow:hidden;
-  border:1px solid var(--line2);box-shadow:var(--shadow);
-  background:#0a0f1a;
-}
-.hero-video .frame{position:relative;aspect-ratio:9/16;background:#0a0f1a}
-.hero-video .vmeta{
-  position:absolute;inset:auto 0 0 0;z-index:5;
-  display:flex;align-items:center;gap:10px;
-  padding:12px 14px;background:linear-gradient(transparent,rgba(0,0,0,.85));
-  text-align:left;
-}
-.hero-video .vmeta .vname{font-size:12px;font-weight:800}
-.hero-video .vmeta .vsub{font-size:10.5px;color:var(--muted);font-weight:600}
-.vavatar{width:34px;height:34px;border-radius:50%;flex:none;background:var(--blue-grad);display:flex;align-items:center;justify-content:center}
-.vavatar svg{width:18px;height:18px}
-.vplay{
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:4;
-  width:64px;height:64px;border-radius:50%;
-  background:rgba(34,197,94,.92);display:flex;align-items:center;justify-content:center;
-  box-shadow:0 0 0 10px rgba(34,197,94,.22),var(--shadow-g);
-  animation:pulse 2.2s infinite;
-}
-.vplay svg{width:26px;height:26px;color:var(--green-ink);margin-left:3px}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,.45)}70%{box-shadow:0 0 0 18px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
-.vtimeline{position:absolute;inset:auto 0 0 0;height:3px;background:rgba(255,255,255,.18);z-index:6}
-.vtimeline i{display:block;height:100%;width:42%;background:var(--green)}
-.vtag{
-  position:absolute;top:10px;left:10px;z-index:4;
-  background:rgba(5,7,13,.82);border:1px solid rgba(34,197,94,.4);
-  color:var(--green-l);font-size:10px;font-weight:800;letter-spacing:.05em;
-  padding:5px 10px;border-radius:999px;
-}
-
-/* ---------- Car SVG scene (reused) ---------- */
-.carscene{position:absolute;inset:0;z-index:1}
-.carscene .car-svg{width:100%;height:100%}
-.car-svg .body{fill:#16285a;transition:filter .3s ease}
-.car-svg .gloss{fill:url(#glossG);opacity:.9}
-.car-svg.before .gloss{opacity:0}
-.car-svg.before .body{fill:#1c232f;filter:grayscale(.55) brightness(.72) saturate(.6)}
-.car-svg.before .car-lite{opacity:.25}
-.car-svg .car-lite{transition:opacity .3s ease}
-.sparkle{position:absolute;z-index:3;color:#fff;opacity:0;transition:opacity .4s ease}
-.car-svg.after ~ .sparkle{opacity:1}
-.sparkle svg{width:100%;height:100%;filter:drop-shadow(0 0 4px rgba(255,255,255,.8))}
-.skyline{position:absolute;inset:0;z-index:0;background:
-  linear-gradient(180deg,#0a1226 0%,#12203f 55%,#0a1226 100%)}
-.sun{position:absolute;top:12%;right:8%;width:54px;height:54px;border-radius:50%;
-  background:radial-gradient(circle at 35% 35%,#ffe9a8,#fbbf24 70%);opacity:.9;z-index:1}
-.sun::after{content:"";position:absolute;inset:-26px;border-radius:50%;
-  background:radial-gradient(circle,rgba(251,191,36,.35),transparent 70%)}
-
-/* ---------- Sections base ---------- */
-section{position:relative;padding:56px 0}
-.section-head{text-align:center;max-width:56ch;margin:0 auto 30px}
-.kicker{
-  display:inline-flex;align-items:center;gap:8px;
-  color:var(--green-l);font-weight:800;font-size:12px;letter-spacing:.12em;
-  text-transform:uppercase;margin-bottom:12px;
-}
-.kicker::before,.kicker::after{content:"";width:22px;height:2px;background:var(--green);border-radius:2px}
-.section-head h2{font-size:clamp(25px,6.6vw,38px);font-weight:900}
-.section-head p{color:var(--muted);margin-top:12px;font-size:16px;font-weight:600}
-.media-note{
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  margin-top:16px;font-size:12px;color:var(--muted);font-weight:700;
-}
-.media-note svg{width:15px;height:15px;color:var(--blue-l);flex:none}
-
-/* ---------- Reveal ---------- */
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
-.reveal.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){
-  .reveal{opacity:1;transform:none;transition:none}
-  .vplay{animation:none}
-  html{scroll-behavior:auto}
-}
-
-/* ---------- Benefits ---------- */
-.benefits{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.ben-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.ben-card{
-  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);
-  padding:18px 14px;display:flex;flex-direction:column;gap:10px;align-items:flex-start;
-}
-.ben-card .ic{
-  width:42px;height:42px;border-radius:12px;flex:none;
-  background:var(--blue-grad);display:flex;align-items:center;justify-content:center;
-}
-.ben-card .ic svg{width:22px;height:22px}
-.ben-card h3{font-size:15px;font-weight:800}
-.ben-card p{font-size:13px;color:var(--muted);font-weight:600}
-@media(min-width:768px){.ben-grid{grid-template-columns:repeat(4,1fr)}}
-
-/* ---------- Problem ---------- */
-.problem{background:radial-gradient(100% 80% at 50% 0%,#2a1220 0%,var(--bg) 60%)}
-.problem-grid{display:grid;gap:12px}
-.problem-item{
-  display:flex;gap:14px;align-items:flex-start;
-  background:rgba(239,68,68,.05);border:1px solid rgba(239,68,68,.22);
-  border-radius:var(--radius-sm);padding:16px;
-}
-.problem-item .ic{width:40px;height:40px;border-radius:11px;flex:none;background:rgba(239,68,68,.14);display:flex;align-items:center;justify-content:center}
-.problem-item .ic svg{width:20px;height:20px;color:var(--red)}
-.problem-item h3{font-size:16px;font-weight:800;margin-bottom:2px}
-.problem-item p{font-size:14px;color:var(--muted);font-weight:600}
-@media(min-width:768px){.problem-grid{grid-template-columns:repeat(2,1fr)}}
-
-/* ---------- Before/After slider ---------- */
-.ba{
-  position:relative;border-radius:var(--radius);overflow:hidden;
-  border:1px solid var(--line2);box-shadow:var(--shadow);
-  aspect-ratio:4/3;background:#0a0f1a;touch-action:pan-y;
-}
-.ba .layer{position:absolute;inset:0;overflow:hidden}
-.ba .layer .carscene{width:100%;height:100%}
-.ba .before-layer{width:50%;z-index:2;border-right:3px solid #fff}
-.ba .label{
-  position:absolute;z-index:5;font-size:11px;font-weight:900;letter-spacing:.04em;
-  padding:6px 11px;border-radius:999px;
-}
-.ba .l-before{left:10px;top:10px;background:rgba(5,7,13,.85);color:#f0f2f6;border:1px solid rgba(255,255,255,.25)}
-.ba .l-after{right:10px;top:10px;background:var(--green);color:var(--green-ink);border:1px solid rgba(255,255,255,.35)}
-.ba input[type=range]{
-  position:absolute;inset:0;z-index:6;width:100%;height:100%;margin:0;
-  -webkit-appearance:none;appearance:none;background:transparent;cursor:ew-resize;
-}
-.ba input[type=range]::-webkit-slider-thumb{
-  -webkit-appearance:none;appearance:none;width:52px;height:52px;border-radius:50%;
-  background:rgba(255,255,255,.95);border:4px solid var(--green);
-  box-shadow:0 4px 14px rgba(0,0,0,.4);cursor:ew-resize;
-}
-.ba input[type=range]::-moz-range-thumb{
-  width:46px;height:46px;border-radius:50%;background:#fff;border:4px solid var(--green);
-  box-shadow:0 4px 14px rgba(0,0,0,.4);cursor:ew-resize;
-}
-
-/* ---------- Gallery ---------- */
-.gallery{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.gal-grid{display:grid;gap:14px}
-.gal-card{
-  position:relative;border-radius:var(--radius);overflow:hidden;
-  border:1px solid var(--line2);aspect-ratio:16/10;min-height:190px;
-  background:var(--panel2);
-}
-.gal-card .cap{
-  position:absolute;inset:auto 0 0 0;z-index:4;
-  background:linear-gradient(transparent,rgba(0,0,0,.88));padding:26px 16px 14px;
-}
-.gal-card .cap h3{font-size:16px;font-weight:800}
-.gal-card .cap p{font-size:12.5px;color:var(--muted);font-weight:700;margin-top:2px}
-.gal-card .mini-ic{
-  position:absolute;top:12px;right:12px;z-index:3;width:40px;height:40px;border-radius:11px;
-  background:rgba(5,7,13,.7);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;
-}
-.gal-card .mini-ic svg{width:20px;height:20px;color:var(--green-l)}
-.gal-ba{aspect-ratio:16/10}
-@media(min-width:768px){.gal-grid{grid-template-columns:repeat(2,1fr)}}
-
-/* Reflection card visual */
-.reflect-scene{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:22%}
-.reflect-scene .r-car{width:78%}
-.reflect-scene .r-floor{width:78%;height:34px;margin-top:-4px;background:linear-gradient(180deg,rgba(255,255,255,.32),rgba(255,255,255,.02));border-radius:0 0 14px 14px;transform:scaleY(-1)}
-/* Sun card visual */
-.sun-scene{position:absolute;inset:0;z-index:1;background:radial-gradient(60% 60% at 50% 30%,#1e3a5f 0%,#0d1524 70%)}
-.sun-scene .halo{position:absolute;top:10%;left:50%;transform:translateX(-50%);width:110px;height:110px;border-radius:50%;background:radial-gradient(circle,rgba(251,191,36,.5),transparent 70%)}
-.sun-scene .halo i{position:absolute;inset:8px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#ffe9a8,#fbbf24 75%)}
-/* Applying card visual */
-.apply-scene{position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center}
-.apply-scene .hand{
-  width:120px;height:120px;border-radius:50%;
-  background:radial-gradient(circle at 40% 30%,#e8c39a,#b98d5f 70%);
-  box-shadow:inset -8px -10px 18px rgba(0,0,0,.35),0 10px 24px rgba(0,0,0,.4);
-  transform:rotate(-12deg);position:relative;
-}
-.apply-scene .hand::after{
-  content:"";position:absolute;inset:0;border-radius:50%;
-  background:linear-gradient(135deg,rgba(34,197,94,.55),rgba(34,197,94,.1));
-  mix-blend-mode:screen;
-}
-.apply-scene .pad{
-  position:absolute;width:200px;height:64px;border-radius:16px;top:50%;left:50%;
-  transform:translate(-50%,-50%) rotate(8deg);
-  background:linear-gradient(180deg,#1e40af,#122a6b);
-  border:1px solid rgba(255,255,255,.25);box-shadow:0 10px 22px rgba(0,0,0,.4);
-}
-.apply-scene .pad i{position:absolute;inset:10px;border-radius:10px;background:rgba(255,255,255,.14)}
-/* Client looking visual */
-.look-scene{position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center}
-.look-scene .mirror{
-  width:min(70%,240px);aspect-ratio:4/5;border-radius:18px;position:relative;
-  background:linear-gradient(160deg,#2c4a86,#16285a);
-  border:6px solid #0a0f1a;box-shadow:0 14px 30px rgba(0,0,0,.5);
-}
-.look-scene .mirror::after{
-  content:"";position:absolute;inset:8px;border-radius:12px;
-  background:linear-gradient(160deg,rgba(255,255,255,.4),rgba(255,255,255,.05) 40%,rgba(34,197,94,.22));
-}
-.look-scene .face{
-  position:absolute;top:-14px;left:50%;transform:translateX(-50%);width:56px;height:56px;
-  border-radius:50%;background:radial-gradient(circle at 40% 30%,#e8c39a,#c79a6b 70%);
-  box-shadow:0 6px 12px rgba(0,0,0,.4);z-index:2;
-}
-.look-scene .eyes{position:absolute;z-index:3;top:16px;display:flex;gap:16px}
-.look-scene .eyes i{width:7px;height:7px;border-radius:50%;background:#2b2b2b}
-
-/* ---------- Demo (video) ---------- */
-.demo{background:radial-gradient(110% 70% at 50% 0%,#10203f 0%,var(--bg) 60%)}
-.demo-steps{display:grid;gap:14px}
-.demo-step{
-  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);
-  overflow:hidden;
-}
-.demo-step .media{
-  position:relative;aspect-ratio:16/8;background:linear-gradient(150deg,#16285a,#0a0f1a);overflow:hidden;
-}
-.demo-step .media .stepno{
-  position:absolute;top:12px;left:12px;z-index:3;font-family:'Rubik';font-weight:900;
-  font-size:13px;color:var(--green-ink);background:var(--green);padding:5px 11px;border-radius:999px;
-}
-.demo-step .media .ph-ic{
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;
-  border-radius:14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);
-  display:flex;align-items:center;justify-content:center;
-}
-.demo-step .media .ph-ic svg{width:28px;height:28px;color:var(--green-l)}
-.demo-step .body{padding:14px 16px 16px}
-.demo-step .body h3{font-size:16px;font-weight:800;margin-bottom:4px}
-.demo-step .body p{font-size:13.5px;color:var(--muted);font-weight:600}
-@media(min-width:768px){.demo-steps{grid-template-columns:repeat(3,1fr)}}
-
-/* ---------- How it works ---------- */
-.how{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.how-steps{display:grid;gap:0}
-.how-step{display:flex;align-items:flex-start;gap:16px;padding:16px 0;position:relative}
-.how-step:not(:last-child)::after{content:"";position:absolute;left:26px;top:66px;bottom:-6px;width:2px;background:var(--line2)}
-.how-step .n{
-  flex:none;width:52px;height:52px;border-radius:16px;background:var(--blue-grad);
-  border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;
-  font-family:'Rubik';font-weight:900;font-size:20px;color:#fff;
-}
-.how-step h3{font-size:18px;font-weight:800}
-.how-step p{font-size:14px;color:var(--muted);font-weight:600;margin-top:3px}
-.how-step svg{width:22px;height:22px;color:var(--green-l);margin-top:2px;flex:none}
-@media(min-width:768px){
-  .how-steps{grid-template-columns:repeat(3,1fr);gap:18px}
-  .how-step{flex-direction:column;align-items:center;text-align:center;padding:0}
-  .how-step:not(:last-child)::after{display:none}
-  .how-step p{max-width:24ch}
-}
-
-/* ---------- Trust ---------- */
-.trust{background:radial-gradient(110% 90% at 50% 0%,#0d2b1a 0%,var(--bg) 60%)}
-.trust-quote{
-  text-align:center;font-family:'Rubik';font-weight:900;font-size:clamp(21px,5.6vw,32px);
-  margin:0 auto 26px;max-width:20ch;
-}
-.trust-quote .green{color:var(--green-l)}
-.trust-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.trust-item{
-  display:flex;align-items:center;gap:12px;
-  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);
-  padding:15px 14px;
-}
-.trust-item .ic{width:38px;height:38px;border-radius:11px;flex:none;background:rgba(34,197,94,.14);display:flex;align-items:center;justify-content:center}
-.trust-item .ic svg{width:20px;height:20px;color:var(--green)}
-.trust-item h3{font-size:14px;font-weight:800}
-.trust-item p{font-size:12px;color:var(--muted);font-weight:700}
-.trust-flow{
-  margin:26px auto 0;max-width:640px;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;
-  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px 12px;
-}
-.tf-step{text-align:center}
-.tf-step .tfic{width:44px;height:44px;margin:0 auto 8px;border-radius:12px;background:var(--blue-grad);display:flex;align-items:center;justify-content:center}
-.tf-step .tfic svg{width:22px;height:22px}
-.tf-step h4{font-size:12.5px;font-weight:800}
-.tf-step p{font-size:11px;color:var(--muted);font-weight:700}
-.tf-arrow{display:none}
-@media(min-width:768px){.trust-grid{grid-template-columns:repeat(3,1fr)}}
-
-/* ---------- Testimonials ---------- */
-.testi{background:var(--bg2);border-top:1px solid var(--line)}
-.testi-grid{display:grid;gap:12px}
-.testi-card{
-  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);
-  padding:18px 16px;
-}
-.testi-card .stars{display:flex;gap:2px;margin-bottom:10px}
-.testi-card .stars svg{width:15px;height:15px;color:var(--gold)}
-.testi-card p{font-size:14px;font-weight:600;color:var(--text)}
-.testi-card .who{display:flex;align-items:center;gap:11px;margin-top:14px;padding-top:13px;border-top:1px solid var(--line)}
-.testi-card .avatar{
-  width:40px;height:40px;border-radius:50%;flex:none;font-family:'Rubik';font-weight:800;font-size:14px;
-  display:flex;align-items:center;justify-content:center;color:#fff;
-}
-.testi-card .who .nm{font-size:13px;font-weight:800}
-.testi-card .who .ct{font-size:11.5px;color:var(--muted);font-weight:700}
-.testi-badge{
-  display:inline-flex;align-items:center;gap:7px;margin-bottom:12px;
-  background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);
-  color:var(--green-l);font-size:12px;font-weight:800;padding:6px 12px;border-radius:999px;
-}
-.testi-badge svg{width:14px;height:14px}
-@media(min-width:768px){.testi-grid{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1024px){.testi-grid{grid-template-columns:repeat(3,1fr)}}
-
-/* ---------- Comparison ---------- */
-.compare{background:var(--bg)}
-.compare-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:var(--radius);border:1px solid var(--line)}
-.compare-table{width:100%;min-width:680px;border-collapse:collapse;background:var(--panel);font-size:13.5px}
-.compare-table th,.compare-table td{padding:14px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
-.compare-table thead th{background:var(--panel2);font-family:'Rubik';font-weight:800;font-size:14px;position:sticky;top:0}
-.compare-table thead .col-resina{background:#0e3b22;border:1px solid rgba(34,197,94,.4)}
-.compare-table th:first-child,.compare-table td:first-child{position:sticky;left:0;background:var(--panel2);z-index:2;font-weight:800;min-width:150px}
-.compare-table tbody tr:last-child td{border-bottom:none}
-.compare-table td.col-resina{background:rgba(34,197,94,.07)}
-.compare-table .rec{
-  display:inline-block;background:var(--green);color:var(--green-ink);font-weight:900;font-size:10px;
-  letter-spacing:.06em;padding:3px 9px;border-radius:999px;margin-top:5px;
-}
-.ck{width:18px;height:18px;color:var(--green);flex:none;display:inline-block;vertical-align:-3px}
-.xd{width:18px;height:18px;color:var(--red);flex:none;display:inline-block;vertical-align:-3px}
-.mid{width:18px;height:18px;color:var(--gold);flex:none;display:inline-block;vertical-align:-3px}
-.compare td b{color:var(--text)}
-.compare .muted{color:var(--muted);font-weight:600}
-.compare-legend{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:16px;font-size:12.5px;color:var(--muted);font-weight:700}
-
-/* ---------- Offer ---------- */
-.offer{
-  background:
-    radial-gradient(120% 80% at 50% 0%,#123a22 0%,rgba(18,58,34,0) 55%),
-    var(--bg);
-  border-top:1px solid var(--line);
-}
-.offer-intro{text-align:center;max-width:52ch;margin:0 auto 30px}
-.offer-intro .big{font-size:clamp(24px,6.4vw,36px);font-weight:900;font-family:'Rubik'}
-.offer-intro .big .green{color:var(--green-l)}
-.offer-intro p{color:var(--muted);margin-top:10px;font-weight:600;font-size:16px}
-.offer-grid{display:grid;gap:18px;max-width:900px;margin:0 auto}
-.offer-card{
-  position:relative;background:var(--panel);border:1px solid var(--line2);border-radius:20px;
-  padding:24px 18px;display:flex;flex-direction:column;gap:14px;text-align:center;
-  transition:transform .18s ease;
-}
-.offer-card.featured{
-  background:linear-gradient(180deg,#0e3b22,#0d1524 55%);
-  border:2px solid var(--green);box-shadow:0 20px 50px rgba(34,197,94,.22);
-  order:-1;
-}
-.offer-tag{
-  position:absolute;top:-14px;left:50%;transform:translateX(-50%);
-  background:linear-gradient(90deg,#fbbf24,#f59e0b);color:#221400;font-weight:900;font-size:11px;
-  letter-spacing:.05em;padding:6px 14px;border-radius:999px;white-space:nowrap;
-  box-shadow:0 6px 16px rgba(245,158,11,.35);
-}
-.offer-card.featured .offer-tag{background:var(--green);color:var(--green-ink)}
-.offer-head h3{font-size:19px;font-weight:900}
-.offer-head .sub{font-size:12.5px;color:var(--muted);font-weight:700;margin-top:3px}
-.offer-units{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
-.unit-pill{
-  display:inline-flex;align-items:center;gap:6px;background:var(--blue-grad);
-  border:1px solid var(--line2);padding:7px 12px;border-radius:999px;font-weight:800;font-size:12.5px;
-}
-.unit-pill svg{width:15px;height:15px;color:var(--green-l)}
-.offer-price{margin-top:2px}
-.offer-price .from{font-size:14px;color:var(--muted);font-weight:700;text-decoration:line-through}
-.offer-price .to{
-  font-family:'Rubik';font-weight:900;font-size:clamp(32px,8vw,42px);color:var(--green-l);line-height:1;
-  display:block;margin:6px 0 2px;
-}
-.offer-price .unit{font-size:12px;color:var(--muted);font-weight:700}
-.offer-save{
-  display:inline-flex;align-items:center;gap:7px;margin:0 auto;
-  background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.35);color:var(--green-l);
-  font-weight:800;font-size:12.5px;padding:7px 13px;border-radius:999px;
-}
-.offer-save svg{width:15px;height:15px}
-.offer-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.om{display:flex;flex-direction:column;align-items:center;gap:6px;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:11px 6px}
-.om svg{width:20px;height:20px;color:var(--green-l)}
-.om span{font-size:10.5px;font-weight:800;line-height:1.25}
-.offer-note{font-size:12px;color:var(--muted);font-weight:700;display:flex;align-items:center;justify-content:center;gap:7px}
-.offer-note svg{width:15px;height:15px;color:var(--green);flex:none}
-@media(min-width:768px){
-  .offer-grid{grid-template-columns:repeat(3,1fr);align-items:center}
-  .offer-card.featured{order:0;transform:scale(1.04)}
-}
-.offer-secure{
-  display:flex;align-items:center;justify-content:center;gap:9px;margin-top:22px;
-  font-size:13px;color:var(--muted);font-weight:700;flex-wrap:wrap;
-}
-.offer-secure svg{width:17px;height:17px;color:var(--green)}
-.offer-secure .sep{width:4px;height:4px;border-radius:50%;background:var(--line2)}
-
-/* ---------- FAQ ---------- */
-.faq{background:var(--bg2);border-top:1px solid var(--line)}
-.faq-list{max-width:680px;margin:0 auto;display:grid;gap:10px}
-.faq-item{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-sm);overflow:hidden}
-.faq-item summary{
-  display:flex;align-items:center;justify-content:space-between;gap:12px;
-  padding:17px 16px;cursor:pointer;list-style:none;font-weight:800;font-size:15px;
-}
-.faq-item summary::-webkit-details-marker{display:none}
-.faq-item summary .plus{flex:none;width:28px;height:28px;border-radius:9px;background:var(--panel3);display:flex;align-items:center;justify-content:center;transition:transform .2s ease}
-.faq-item summary .plus svg{width:16px;height:16px;color:var(--green-l)}
-.faq-item[open] summary .plus{transform:rotate(45deg)}
-.faq-item .a{padding:0 16px 17px;color:var(--muted);font-weight:600;font-size:14px}
-
-/* ---------- Final CTA ---------- */
-.final-cta{
-  background:
-    radial-gradient(130% 90% at 50% 0%,#13264f 0%,rgba(19,38,79,0) 55%),
-    radial-gradient(90% 60% at 80% 100%,#0e2a1a 0%,rgba(14,42,26,0) 60%),
-    var(--bg);
-  text-align:center;
-}
-.final-cta h2{font-size:clamp(26px,7vw,42px);font-weight:900;max-width:16ch;margin:0 auto 14px}
-.final-cta h2 .green{color:var(--green-l)}
-.final-cta .sub{color:var(--muted);font-weight:600;font-size:17px;max-width:36ch;margin:0 auto 24px}
-.final-badges{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:22px 0 0}
-.fb{display:inline-flex;align-items:center;gap:7px;background:var(--panel);border:1px solid var(--line);padding:9px 14px;border-radius:999px;font-size:12.5px;font-weight:800}
-.fb svg{width:16px;height:16px;color:var(--green)}
-
-/* ---------- Floating CTA ---------- */
-.float-cta{
-  position:fixed;left:0;right:0;bottom:0;z-index:80;
-  padding:10px 12px calc(10px + env(safe-area-inset-bottom));
-  background:linear-gradient(180deg,rgba(5,7,13,.75),rgba(5,7,13,.96));
-  backdrop-filter:blur(10px);border-top:1px solid var(--line2);
-  transform:translateY(110%);transition:transform .3s ease;
-}
-.float-cta.show{transform:none}
-.float-cta .cta{padding:15px 16px;font-size:14.5px}
-@media(min-width:768px){
-  .float-cta .wrap{max-width:560px}
-}
-
-/* ---------- Footer ---------- */
-.footer{border-top:1px solid var(--line);padding:28px 0 40px;background:var(--bg);text-align:center}
-.footer .brand{font-family:'Rubik';font-weight:900;font-size:18px;letter-spacing:.02em}
-.footer .brand span{color:var(--green-l)}
-.footer p{color:var(--muted);font-size:12px;font-weight:600;max-width:62ch;margin:10px auto 0;line-height:1.6}
-.footer .legal{color:#5b6a85;font-size:11px}
-
-/* ---------- Offer anchor offset ---------- */
-#oferta{scroll-margin-top:64px}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Resina Extreme: Da pintura queimada e fosca ao brilho espelhado de fabrica em 15 minutos. Receba em casa e so pague na entrega (COD). Frete Gratis.">
+  <meta name="theme-color" content="#030712">
+  <title>Resina Extreme | Brilho Espelhado em 15 Minutos · Pague na Entrega</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Rubik:wght@700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Plus Jakarta Sans", "sans-serif"],
+            heading: ["Rubik", "sans-serif"],
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
-
-<!-- ============ 1. BARRA SUPERIOR FIXA ============ -->
-<header class="topbar" role="banner">
-  <div class="row">
-    <div class="tb-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18H3a1 1 0 0 1-1-1V8a2 2 0 0 1 2-2h11v9"/><path d="M14 6h5l3 4v5a1 1 0 0 1-1 1h-2"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M9 18h7"/></svg>
-      <span>Frete Grátis para Todo Brasil</span>
+<body class="bg-gray-950 text-gray-100 font-sans antialiased selection:bg-emerald-500 selection:text-gray-950 pb-20 sm:pb-0">
+  <!-- 1. BARRA SUPERIOR FIXA -->
+  <header class="sticky top-0 z-50 w-full border-b border-emerald-500/20 bg-gray-950/95 backdrop-blur-md">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-2.5 text-xs sm:text-sm font-bold text-gray-200">
+      <div class="flex items-center gap-2 text-emerald-400">
+        <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-ping"></span>
+        <span class="font-black uppercase tracking-wide">Pague Somente na Entrega</span>
+      </div>
+      <div class="hidden sm:flex items-center gap-2 text-gray-300">
+        <span>Sem Cartão de Crédito · Risco Zero</span>
+      </div>
+      <div class="flex items-center gap-1.5 text-amber-400 font-black">
+        <span>Frete Grátis Brasil</span>
+      </div>
     </div>
-    <div class="tb-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-      <span>Pague Somente Quando Receber</span>
-    </div>
-    <div class="tb-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
-      <span>Compra Segura Sem Cartão</span>
-    </div>
-  </div>
-</header>
-
-<!-- ============ 2. HERO SECTION ============ -->
-<section class="hero" aria-label="Apresentação">
-  <div class="wrap hero-inner">
-    <!-- SUGESTÃO DE MÍDIA (HERO): Vídeo vertical 9:16 real de antes e depois aplicado em 60s,
-         com cliente aplicando e mostrando o reflexo da pintura no sol.
-         Objetivo psicológico: mostrar transformação visível + demonstrar facilidade desde o 1º segundo. -->
-    <div class="hero-video reveal" data-media="Vídeo vertical 9:16: aplicação real + antes/depois no sol">
-      <div class="frame">
-        <div class="skyline"></div>
-        <div class="sun"></div>
-        <div class="carscene">
-          <svg class="car-svg after" viewBox="0 0 480 220" role="img" aria-label="Carro após aplicação da Resina Extreme com brilho de fábrica">
-            <defs>
-              <linearGradient id="glossG" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#fff" stop-opacity="0.55"/>
-                <stop offset="0.4" stop-color="#fff" stop-opacity="0.1"/>
-                <stop offset="1" stop-color="#fff" stop-opacity="0"/>
-              </linearGradient>
-            </defs>
-            <ellipse cx="240" cy="198" rx="200" ry="11" fill="rgba(0,0,0,0.5)"/>
-            <circle cx="130" cy="152" r="25" fill="#070b13"/>
-            <circle cx="130" cy="152" r="12" fill="#3b4a63"/>
-            <circle cx="360" cy="152" r="25" fill="#070b13"/>
-            <circle cx="360" cy="152" r="12" fill="#3b4a63"/>
-            <rect x="44" y="112" width="11" height="9" rx="2" fill="#ff5a5a" class="car-lite"/>
-            <rect x="416" y="100" width="11" height="9" rx="2" fill="#fff" opacity="0.9" class="car-lite"/>
-            <path class="body" d="M60 138 L60 120 Q60 98 86 98 L148 98 Q168 98 182 80 L204 60 Q224 42 260 44 L336 44 Q380 46 400 80 L412 96 Q424 100 426 114 Q428 126 416 130 L402 134 Q400 140 390 140 L74 140 Q64 140 60 138 Z"/>
-            <path class="glass" d="M186 80 L208 62 Q226 50 256 52 L322 52 Q348 54 362 70 L336 80 Z" fill="#0c1726" stroke="#33415e" stroke-width="2"/>
-            <path class="gloss" d="M60 138 L60 120 Q60 98 86 98 L148 98 Q168 98 182 80 L204 60 Q224 42 260 44 L336 44 Q380 46 400 80 L412 96 Q424 100 426 114 L402 118 Q386 70 330 58 L250 56 Q190 56 172 92 L140 104 L86 104 Q66 104 62 120 Z" fill="url(#glossG)"/>
-          </svg>
+  </header>
+  <!-- 2. HERO SECTION (BAB) -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 pt-8 pb-14 sm:pt-14 sm:pb-24">
+    <div class="relative mx-auto max-w-5xl px-4 sm:px-6 text-center">
+      <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-500/10 px-4 py-1.5 text-xs sm:text-sm font-black text-emerald-300 shadow-lg mb-6">
+        <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>🚨 RISCO ZERO: RECEBA EM CASA E SÓ PAGUE NA ENTREGA</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.15] text-white max-w-4xl mx-auto font-heading">
+        <span class="text-gray-400 line-through block sm:inline text-2xl sm:text-4xl md:text-5xl font-extrabold">
+          Pintura Queimada e Fosca?
+        </span><br class="hidden sm:block"/>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">
+          Brilho Espelhado de Fábrica
+        </span> em 15 Minutos na Garagem
+      </h1>
+      <p class="mt-5 text-base sm:text-xl text-gray-300 font-medium leading-relaxed max-w-2xl mx-auto">
+        A nanotecnologia da <strong class="text-white font-black">Resina Extreme</strong> revitaliza e cria uma película de proteção vitrificada.
+        <span class="text-emerald-300 font-bold bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-500/40">
+          Você só paga quando o produto for entregue na sua porta
+        </span>. Sem cartão e sem PIX adiantado.
+      </p>
+      <div class="mt-6 flex flex-wrap justify-center gap-2 sm:gap-3 text-xs sm:text-sm font-bold text-gray-200">
+        <div class="flex items-center gap-1.5 bg-gray-900/90 border border-gray-800 px-3.5 py-1.5 rounded-full">
+          <span class="text-emerald-400 font-black">✓</span> Sem Máquina / Aplicação Fácil
         </div>
-        <span class="sparkle" style="top:16%;right:20%;width:22px;height:22px"><svg viewBox="0 0 24 24"><path d="M12 0l2.2 9.8L24 12l-9.8 2.2L12 24l-2.2-9.8L0 12l9.8-2.2z" fill="#fff"/></svg></span>
-        <span class="sparkle" style="top:38%;left:12%;width:15px;height:15px"><svg viewBox="0 0 24 24"><path d="M12 0l2.2 9.8L24 12l-9.8 2.2L12 24l-2.2-9.8L0 12l9.8-2.2z" fill="#fbbf24"/></svg></span>
-        <span class="vtag">ANTES &amp; DEPOIS · 60 SEGUNDOS</span>
-        <button class="vplay" aria-label="Assistir demonstração em vídeo" data-scroll="#demonstracao">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        </button>
-        <div class="vtimeline"><i></i></div>
-        <div class="vmeta">
-          <span class="vavatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-4.4 0-8 2.7-8 6v1h16v-1c0-3.3-3.6-6-8-6z"/></svg></span>
+        <div class="flex items-center gap-1.5 bg-gray-900/90 border border-gray-800 px-3.5 py-1.5 rounded-full">
+          <span class="text-emerald-400 font-black">✓</span> Proteção UV & Hidrorrepelente
+        </div>
+        <div class="flex items-center gap-1.5 bg-gray-900/90 border border-gray-800 px-3.5 py-1.5 rounded-full">
+          <span class="text-emerald-400 font-black">✓</span> Frete Grátis Todo Brasil
+        </div>
+      </div>
+      <div class="mt-8 max-w-md mx-auto">
+        <a href="#oferta" class="group relative flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-emerald-500 via-emerald-400 to-teal-400 p-4 sm:p-5 text-base sm:text-lg font-black text-gray-950 shadow-2xl shadow-emerald-500/40 transition-all duration-200 hover:scale-[1.02] hover:brightness-110 active:scale-[0.98]">
+          <span class="uppercase tracking-wide">QUERO RECEBER E PAGAR NA ENTREGA</span>
+        </a>
+        <p class="mt-2.5 text-xs text-gray-400 font-semibold">
+          🔒 Zero pagamento antecipado · Teste no capô sem risco
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- 3. PROVA SOCIAL -->
+  <section class="border-y border-gray-800 bg-gray-900/60 py-6 px-4">
+    <div class="mx-auto max-w-6xl grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+      <div class="p-3 bg-gray-950/60 border border-gray-800 rounded-2xl">
+        <div class="text-2xl sm:text-3xl font-black text-emerald-400 font-heading">14.850+</div>
+        <div class="text-xs sm:text-sm font-bold text-gray-300 mt-0.5">Carros Renovados</div>
+      </div>
+      <div class="p-3 bg-gray-950/60 border border-gray-800 rounded-2xl">
+        <div class="text-2xl sm:text-3xl font-black text-amber-400 font-heading">4.9 ★</div>
+        <div class="text-xs sm:text-sm font-bold text-gray-300 mt-0.5">Avaliação Média Real</div>
+      </div>
+      <div class="p-3 bg-gray-950/60 border border-gray-800 rounded-2xl">
+        <div class="text-2xl sm:text-3xl font-black text-teal-400 font-heading">100%</div>
+        <div class="text-xs sm:text-sm font-bold text-gray-300 mt-0.5">Pague na Entrega (COD)</div>
+      </div>
+      <div class="p-3 bg-gray-950/60 border border-gray-800 rounded-2xl">
+        <div class="text-2xl sm:text-3xl font-black text-cyan-400 font-heading">0%</div>
+        <div class="text-xs sm:text-sm font-bold text-gray-300 mt-0.5">Risco de Fraude</div>
+      </div>
+    </div>
+  </section>
+  <!-- 4. OFERTAS (KITS) -->
+  <section id="oferta" class="py-14 sm:py-24 bg-gradient-to-b from-gray-950 via-emerald-950/20 to-gray-950 px-4">
+    <div class="mx-auto max-w-6xl">
+      <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+        <div class="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 px-4 py-1 text-xs sm:text-sm font-black text-emerald-400 uppercase tracking-widest mb-3">
+          PAGAMENTO SOMENTE NA ENTREGA
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight font-heading">
+          Escolha Seu Kit com Frete Grátis
+        </h2>
+        <p class="mt-3 text-base sm:text-lg text-gray-300">
+          Você recebe em casa e <strong class="text-emerald-400 font-black">só paga na entrega</strong>.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+        <!-- KIT 1 -->
+        <div class="relative flex flex-col justify-between rounded-3xl p-6 sm:p-8 bg-gray-900/70 border border-gray-800">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2">
+            <span class="rounded-full px-4 py-1 text-xs font-black uppercase tracking-wider bg-amber-400 text-gray-950">KIT INICIANTE</span>
+          </div>
           <div>
-            <div class="vname">Resina Extreme</div>
-            <div class="vsub">Renovação visual em 15 minutos</div>
+            <div class="text-center mt-2">
+              <h3 class="text-xl sm:text-2xl font-black text-white font-heading">Compre 1 e Leve 2</h3>
+              <p class="mt-1 text-xs text-gray-400 font-semibold">Ideal para testar sem medo</p>
+            </div>
+            <div class="mt-4 rounded-xl bg-gray-950/80 border border-gray-800 p-2.5 text-center text-xs sm:text-sm font-bold text-emerald-400">
+              2 Frascos de Resina Extreme
+            </div>
+            <div class="mt-6 text-center">
+              <div class="text-xs sm:text-sm font-bold text-gray-500 line-through">De R$ 129,80</div>
+              <div class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-1 font-heading">R$ 109,99</div>
+              <div class="mt-2 inline-block rounded-full bg-emerald-500/10 border border-emerald-500/30 px-3 py-0.5 text-xs font-bold text-emerald-300">
+                Economize R$ 19,81
+              </div>
+            </div>
+            <ul class="mt-6 space-y-2.5 text-xs sm:text-sm text-gray-300 font-semibold border-t border-gray-800 pt-5">
+              <li class="flex items-center gap-2"><span class="text-emerald-400 font-black">✓</span> Frete Grátis Brasil</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-400 font-black">✓</span> Pague somente na entrega</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-400 font-black">✓</span> Sem cartão e sem PIX adiantado</li>
+            </ul>
+          </div>
+          <div class="mt-8">
+            <a href="https://entrega.logzz.com.br/pay/memw3d6ox/loure-compre-3-e-leve-4" target="_blank" rel="noopener noreferrer" class="flex w-full items-center justify-center gap-2 rounded-2xl p-4 text-sm sm:text-base font-black bg-gray-800 text-white hover:bg-gray-700 transition-all">
+              <span>RECEBER 2 FRASCOS</span> →
+            </a>
+          </div>
+        </div>
+        <!-- KIT 2 (DESTAQUE) -->
+        <div class="relative flex flex-col justify-between rounded-3xl p-6 sm:p-8 bg-gradient-to-b from-emerald-950/80 via-gray-900 to-gray-950 border-2 border-emerald-400 shadow-2xl shadow-emerald-500/20 md:-translate-y-2">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2">
+            <span class="rounded-full px-4 py-1 text-xs font-black uppercase tracking-wider bg-emerald-400 text-gray-950 shadow-lg">⭐ MAIS ESCOLHIDO</span>
+          </div>
+          <div>
+            <div class="text-center mt-2">
+              <h3 class="text-xl sm:text-2xl font-black text-white font-heading">Compre 2 e Leve 3</h3>
+              <p class="mt-1 text-xs text-gray-400 font-semibold">O combo favorito dos clientes</p>
+            </div>
+            <div class="mt-4 rounded-xl bg-gray-950/80 border border-gray-800 p-2.5 text-center text-xs sm:text-sm font-bold text-emerald-400">
+              3 Frascos de Resina Extreme
+            </div>
+            <div class="mt-6 text-center">
+              <div class="text-xs sm:text-sm font-bold text-gray-500 line-through">De R$ 194,70</div>
+              <div class="text-3xl sm:text-4xl lg:text-5xl font-black text-emerald-400 mt-1 font-heading">R$ 147,00</div>
+              <div class="mt-2 inline-block rounded-full bg-emerald-500/20 border border-emerald-500/40 px-3 py-0.5 text-xs font-bold text-emerald-300">
+                Economize R$ 47,70
+              </div>
+            </div>
+            <ul class="mt-6 space-y-2.5 text-xs sm:text-sm text-gray-300 font-semibold border-t border-gray-800 pt-5">
+              <li class="flex items-center gap-2"><span class="text-emerald-400 font-black">✓</span> Frete Grátis Brasil</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-400 font-black">✓</span> Pague somente na entrega</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-400 font-black">✓</span> Sem cartão e sem PIX adiantado</li>
+            </ul>
+          </div>
+          <div class="mt-8">
+            <a href="https://entrega.logzz.com.br/pay/memw3d6ox/cidjm-compre-2-e-leve-3" target="_blank" rel="noopener noreferrer" class="flex w-full items-center justify-center gap-2 rounded-2xl p-4 text-sm sm:text-base font-black bg-gradient-to-r from-emerald-500 to-teal-400 text-gray-950 shadow-xl shadow-emerald-500/30 hover:brightness-110 transition-all">
+              <span>RECEBER 3 FRASCOS</span> →
+            </a>
+          </div>
+        </div>
+        <!-- KIT 3 -->
+        <div class="relative flex flex-col justify-between rounded-3xl p-6 sm:p-8 bg-gray-900/70 border border-gray-800">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2">
+            <span class="rounded-full px-4 py-1 text-xs font-black uppercase tracking-wider bg-amber-400 text-gray-950">🔥 MÁXIMA ECONOMIA</span>
+          </div>
+          <div>
+            <div class="text-center mt-2">
+              <h3 class="text-xl sm:text-2xl font-black text-white font-heading">Compre 3 e Leve 4</h3>
+              <p class="mt-1 text-xs text-gray-400 font-semibold">Melhor custo-benefício por frasco</p>
+            </div>
+            <div class="mt-4 rounded-xl bg-gray-950/80 border border-gray-800 p-2.5 text-center text-xs sm:text-sm font-bold text-emerald-400">
+              4 Frascos de Resina Extreme
+            </div>
+            <div class="mt-6 text-center">
+              <div class="text-xs sm:text-sm font-bold text-gray-500 line-through">De R$ 259,60</div>
+              <div class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-1 font-heading">R$ 187,00</div>
+              <div class="mt-2 inline-block rounded-full bg-emerald-500/10 border border-emerald-500/30 px-3 py-0.5 text-xs font-bold text-emerald-300">
+                Economize R$ 72,60
+              </div>
+            </div>
+            <ul class="mt-6 space-y-2.5 text-xs sm:text-sm text-gray-300 font-semibold border-t border-gray-800 pt-5">
+              <li class="flex items-center gap-2"><span class="text-emerald-400 font-black">✓</span> Frete Grátis Brasil</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-400 font-black">✓</span> Pague somente na entrega</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-400 font-black">✓</span> Sem cartão e sem PIX adiantado</li>
+            </ul>
+          </div>
+          <div class="mt-8">
+            <a href="https://entrega.logzz.com.br/pay/memw3d6ox/loure-compre-3-e-leve-4" target="_blank" rel="noopener noreferrer" class="flex w-full items-center justify-center gap-2 rounded-2xl p-4 text-sm sm:text-base font-black bg-gray-800 text-white hover:bg-gray-700 transition-all">
+              <span>RECEBER 4 FRASCOS</span> →
+            </a>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="pill reveal">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-      Você recebe primeiro · Só paga na entrega
+  </section>
+  <!-- 5. FOOTER -->
+  <footer class="border-t border-gray-900 bg-gray-950 py-10 px-4 text-center text-xs text-gray-400">
+    <div class="mx-auto max-w-5xl space-y-2">
+      <div class="text-base font-black text-white font-heading">RESINA <span class="text-emerald-400">EXTREME</span></div>
+      <p>Produto premium para estética automotiva. Pagamento na Entrega (COD) com Frete Grátis Brasil.</p>
+      <p class="text-gray-400">© 2026 Resina Extreme. Todos os direitos reservados.</p>
     </div>
-
-    <h1 class="reveal">Seu carro pode voltar a parecer <span class="green">novo</span>.</h1>
-    <p class="hero-sub reveal">E o melhor: <strong>você só paga quando receber em casa</strong>. Sem cartão, sem PIX antecipado, sem risco.</p>
-
-    <div class="hero-benefits reveal">
-      <span class="hb-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Brilho de fábrica de volta</span>
-      <span class="hb-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Aplicação em 15 min</span>
-      <span class="hb-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Frete grátis</span>
-    </div>
-
-    <div class="cta-block reveal">
-      <a class="cta" href="#oferta" role="button">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18H3a1 1 0 0 1-1-1V8a2 2 0 0 1 2-2h11v9"/><path d="M14 6h5l3 4v5a1 1 0 0 1-1 1h-2"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M9 18h7"/></svg>
-        <span>RECEBER EM CASA E PAGAR SOMENTE NA ENTREGA</span>
-      </a>
-      <p class="hero-cta-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Pagamento somente no recebimento · Sem cadastro · Sem cartão</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 3. BENEFÍCIOS RÁPIDOS ============ -->
-<section class="benefits" aria-label="Benefícios">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker">Benefícios</span>
-      <h2>Tudo o que a Resina Extreme faz pelo seu carro</h2>
-    </div>
-    <div class="ben-grid">
-      <div class="ben-card reveal">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 7a5 5 0 0 0 5 5"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/></svg></span>
-        <h3>Brilho intenso</h3>
-        <p>Reflexo profundo e aparência de carro novo.</p>
-      </div>
-      <div class="ben-card reveal">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>
-        <h3>Aparência renovada</h3>
-        <p>Pintura apagada dá lugar a um visual renovado.</p>
-      </div>
-      <div class="ben-card reveal">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l6 6-9 9H5v-6z"/><path d="M12 6l6 6"/></svg></span>
-        <h3>Aplicação simples</h3>
-        <p>Você mesmo aplica, sem máquina e sem experiência.</p>
-      </div>
-      <div class="ben-card reveal">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-        <h3>Resultado rápido</h3>
-        <p>Brilho visível em minutos, não em horas.</p>
-      </div>
-      <div class="ben-card reveal">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
-        <h3>Economia real</h3>
-        <p>Fracção do custo de um polimento profissional.</p>
-      </div>
-      <div class="ben-card reveal">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg></span>
-        <h3>Proteção visual</h3>
-        <p>Ajuda a preservar o aspecto da pintura por mais tempo.</p>
-      </div>
-      <div class="ben-card reveal">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg></span>
-        <h3>Acabamento profissional</h3>
-        <p>Resultado que parece saído de um estúdio.</p>
-      </div>
-      <div class="ben-card reveal">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/><path d="M7 12h10"/><path d="M12 7v10"/></svg></span>
-        <h3>Fácil manutenção</h3>
-        <p>Manter o brilho fica mais simples no dia a dia.</p>
-      </div>
-    </div>
-    <div style="margin-top:28px" class="reveal">
-      <div class="cta-block">
-        <a class="cta" href="#oferta" role="button">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18H3a1 1 0 0 1-1-1V8a2 2 0 0 1 2-2h11v9"/><path d="M14 6h5l3 4v5a1 1 0 0 1-1 1h-2"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M9 18h7"/></svg>
-          <span>RECEBER EM CASA E PAGAR SOMENTE NA ENTREGA</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 4. PROBLEMA (PAS) ============ -->
-<section class="problem" aria-label="O problema">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker">Você conhece esse problema?</span>
-      <h2>O brilho do carro novo não dura para sempre</h2>
-      <p>E devolver o brilho custa caro — ou muita paciência.</p>
-    </div>
-    <div class="problem-grid">
-      <div class="problem-item reveal">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5"/><circle cx="12" cy="16" r="0.5" fill="currentColor"/></svg></span>
-        <div>
-          <h3>Pintura apagada</h3>
-          <p>O carro perde aquele brilho de fábrica com o tempo.</p>
-        </div>
-      </div>
-      <div class="problem-item reveal">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.9 4.9l2.8 2.8"/><path d="M16.3 16.3l2.8 2.8"/><path d="M4.9 19.1l2.8-2.8"/><path d="M16.3 7.7l2.8-2.8"/></svg></span>
-        <div>
-          <h3>Aparência envelhecida</h3>
-          <p>Um carro antigo parece muito mais velho do que é.</p>
-        </div>
-      </div>
-      <div class="problem-item reveal">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M6 7h9a3 3 0 0 1 0 6H9a3 3 0 0 0 0 6h9"/></svg></span>
-        <div>
-          <h3>Polimento caro</h3>
-          <p>Lava-rápidos cobram valores altos por hora de serviço.</p>
-        </div>
-      </div>
-      <div class="problem-item reveal">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-        <div>
-          <h3>Resultado que não dura</h3>
-          <p>E quando o brilho volta, some rápido de novo.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 5. VEJA COM SEUS PRÓPRIOS OLHOS ============ -->
-<section class="gallery" id="galeria" aria-label="Galeria visual">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker">Prova visual</span>
-      <h2>Veja com seus próprios olhos</h2>
-      <p>Nada de promessas. Arraste e compare o antes e o depois.</p>
-    </div>
-
-    <!-- SUGESTÃO DE MÍDIA: substituir pelo antes/depois real em foto (mesmo carro, mesma luz).
-         Objetivo: prova irrefutável da transformação. -->
-    <div class="ba gal-ba reveal" data-media="Foto real antes/depois do mesmo veículo, mesma iluminação. Objetivo: prova irrefutável.">
-      <div class="layer after-layer">
-        <div class="skyline"></div>
-        <div class="sun"></div>
-        <div class="carscene">
-          <svg class="car-svg after" viewBox="0 0 480 220" role="img" aria-label="Depois: pintura brilhante e renovada">
-            <defs>
-              <linearGradient id="glossG2" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#fff" stop-opacity="0.55"/>
-                <stop offset="0.4" stop-color="#fff" stop-opacity="0.1"/>
-                <stop offset="1" stop-color="#fff" stop-opacity="0"/>
-              </linearGradient>
-            </defs>
-            <ellipse cx="240" cy="198" rx="200" ry="11" fill="rgba(0,0,0,0.5)"/>
-            <circle cx="130" cy="152" r="25" fill="#070b13"/>
-            <circle cx="130" cy="152" r="12" fill="#3b4a63"/>
-            <circle cx="360" cy="152" r="25" fill="#070b13"/>
-            <circle cx="360" cy="152" r="12" fill="#3b4a63"/>
-            <rect x="44" y="112" width="11" height="9" rx="2" fill="#ff5a5a" class="car-lite"/>
-            <rect x="416" y="100" width="11" height="9" rx="2" fill="#fff" opacity="0.9" class="car-lite"/>
-            <path class="body" d="M60 138 L60 120 Q60 98 86 98 L148 98 Q168 98 182 80 L204 60 Q224 42 260 44 L336 44 Q380 46 400 80 L412 96 Q424 100 426 114 Q428 126 416 130 L402 134 Q400 140 390 140 L74 140 Q64 140 60 138 Z"/>
-            <path class="glass" d="M186 80 L208 62 Q226 50 256 52 L322 52 Q348 54 362 70 L336 80 Z" fill="#0c1726" stroke="#33415e" stroke-width="2"/>
-            <path class="gloss" d="M60 138 L60 120 Q60 98 86 98 L148 98 Q168 98 182 80 L204 60 Q224 42 260 44 L336 44 Q380 46 400 80 L412 96 Q424 100 426 114 L402 118 Q386 70 330 58 L250 56 Q190 56 172 92 L140 104 L86 104 Q66 104 62 120 Z" fill="url(#glossG2)"/>
-          </svg>
-        </div>
-        <span class="sparkle" style="top:16%;right:18%;width:22px;height:22px"><svg viewBox="0 0 24 24"><path d="M12 0l2.2 9.8L24 12l-9.8 2.2L12 24l-2.2-9.8L0 12l9.8-2.2z" fill="#fff"/></svg></span>
-        <span class="label l-after">DEPOIS · BRILHO RENOVADO</span>
-      </div>
-      <div class="layer before-layer" id="ba-before">
-        <div class="skyline" style="filter:grayscale(.5) brightness(.75)"></div>
-        <div class="carscene">
-          <svg class="car-svg before" viewBox="0 0 480 220" role="img" aria-label="Antes: pintura apagada e sem brilho">
-            <defs>
-              <linearGradient id="glossG3" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#fff" stop-opacity="0.4"/>
-                <stop offset="1" stop-color="#fff" stop-opacity="0"/>
-              </linearGradient>
-            </defs>
-            <ellipse cx="240" cy="198" rx="200" ry="11" fill="rgba(0,0,0,0.6)"/>
-            <circle cx="130" cy="152" r="25" fill="#05070d"/>
-            <circle cx="130" cy="152" r="12" fill="#2a3345"/>
-            <circle cx="360" cy="152" r="25" fill="#05070d"/>
-            <circle cx="360" cy="152" r="12" fill="#2a3345"/>
-            <rect x="44" y="112" width="11" height="9" rx="2" fill="#7a3a3a" class="car-lite"/>
-            <rect x="416" y="100" width="11" height="9" rx="2" fill="#aab2c0" opacity="0.6" class="car-lite"/>
-            <path class="body" d="M60 138 L60 120 Q60 98 86 98 L148 98 Q168 98 182 80 L204 60 Q224 42 260 44 L336 44 Q380 46 400 80 L412 96 Q424 100 426 114 Q428 126 416 130 L402 134 Q400 140 390 140 L74 140 Q64 140 60 138 Z"/>
-            <path class="glass" d="M186 80 L208 62 Q226 50 256 52 L322 52 Q348 54 362 70 L336 80 Z" fill="#0a1220" stroke="#1c2436" stroke-width="2"/>
-            <path class="gloss" d="M60 138 L60 120 Q60 98 86 98 L148 98 Q168 98 182 80 L204 60 Q224 42 260 44 L336 44 Q380 46 400 80 L412 96 Q424 100 426 114 L402 118 Q386 70 330 58 L250 56 Q190 56 172 92 L140 104 L86 104 Q66 104 62 120 Z" fill="url(#glossG3)"/>
-          </svg>
-        </div>
-        <span class="label l-before">ANTES · PINTURA APAGADA</span>
-      </div>
-      <input type="range" id="ba-range" min="0" max="100" value="50" aria-label="Comparar antes e depois" aria-valuetext="Comparação antes e depois">
-    </div>
-
-    <div class="gal-grid" style="margin-top:16px">
-      <!-- SUGESTÃO DE MÍDIA: foto com reflexo real do carro refletindo o ambiente. Objetivo: brilho profundo. -->
-      <div class="gal-card reveal" data-media="Foto do carro refletindo o entorno na pintura. Objetivo: evidenciar brilho profundo.">
-        <div class="reflect-scene">
-          <svg class="r-car" viewBox="0 0 480 220" aria-hidden="true">
-            <ellipse cx="240" cy="198" rx="200" ry="11" fill="rgba(0,0,0,0.5)"/>
-            <circle cx="130" cy="152" r="25" fill="#070b13"/>
-            <circle cx="130" cy="152" r="12" fill="#3b4a63"/>
-            <circle cx="360" cy="152" r="25" fill="#070b13"/>
-            <circle cx="360" cy="152" r="12" fill="#3b4a63"/>
-            <path d="M60 138 L60 120 Q60 98 86 98 L148 98 Q168 98 182 80 L204 60 Q224 42 260 44 L336 44 Q380 46 400 80 L412 96 Q424 100 426 114 Q428 126 416 130 L402 134 Q400 140 390 140 L74 140 Q64 140 60 138 Z" fill="#1e3a8a"/>
-            <path d="M186 80 L208 62 Q226 50 256 52 L322 52 Q348 54 362 70 L336 80 Z" fill="#0c1726"/>
-            <path d="M60 138 L60 120 Q60 98 86 98 L148 98 Q168 98 182 80 L204 60 Q224 42 260 44 L336 44 Q380 46 400 80 L412 96 L400 120 L86 120 Q66 120 62 138 Z" fill="rgba(255,255,255,0.22)"/>
-          </svg>
-          <div class="r-floor"></div>
-        </div>
-        <span class="mini-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2"/><path d="M2 10h20v8a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/><path d="M6 15h2"/></svg></span>
-        <div class="cap"><h3>Reflexo na pintura</h3><p>O brilho devolve o "espelho" ao carro.</p></div>
-      </div>
-
-      <!-- SUGESTÃO DE MÍDIA: vídeo/foto do carro ao sol girando, mostrando o brilho. Objetivo: resultado real em luz natural. -->
-      <div class="gal-card reveal" data-media="Vídeo curto girando em volta do carro ao sol. Objetivo: mostrar o brilho em luz natural.">
-        <div class="sun-scene">
-          <div class="halo"><i></i></div>
-          <svg style="position:absolute;bottom:6%;left:50%;transform:translateX(-50%);width:70%" viewBox="0 0 480 220" aria-hidden="true">
-            <circle cx="130" cy="152" r="25" fill="#070b13"/>
-            <circle cx="360" cy="152" r="25" fill="#070b13"/>
-            <path d="M60 138 L60 120 Q60 98 86 98 L148 98 Q168 98 182 80 L204 60 Q224 42 260 44 L336 44 Q380 46 400 80 L412 96 Q424 100 426 114 Q428 126 416 130 L402 134 Q400 140 390 140 L74 140 Q64 140 60 138 Z" fill="#1e3a8a"/>
-            <path d="M186 80 L208 62 Q226 50 256 52 L322 52 Q348 54 362 70 L336 80 Z" fill="#0c1726"/>
-            <path d="M60 138 L60 120 Q60 98 86 98 L148 98 Q168 98 182 80 L204 60 L400 120 L86 120 Q66 120 62 138 Z" fill="rgba(255,255,255,0.25)"/>
-          </svg>
-        </div>
-        <span class="mini-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span>
-        <div class="cap"><h3>Resultado ao sol</h3><p>Brilho intenso em luz natural.</p></div>
-      </div>
-
-      <!-- SUGESTÃO DE MÍDIA: foto/vídeo do cliente aplicando com pano. Objetivo: mostrar simplicidade. -->
-      <div class="gal-card reveal" data-media="Foto do cliente aplicando a resina com pano de microfibra. Objetivo: mostrar que é simples.">
-        <div class="apply-scene">
-          <div class="pad"><i></i></div>
-          <div class="hand"></div>
-        </div>
-        <span class="mini-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l6 6-9 9H5v-6z"/></svg></span>
-        <div class="cap"><h3>Você mesmo aplica</h3><p>Pano, resina e 15 minutos.</p></div>
-      </div>
-
-      <!-- SUGESTÃO DE MÍDIA: vídeo do cliente admirando o reflexo na pintura. Objetivo: desejo de resultado. -->
-      <div class="gal-card reveal" data-media="Vídeo do cliente conferindo o reflexo na pintura com satisfação. Objetivo: desejo + identificação.">
-        <div class="look-scene">
-          <div class="face"></div>
-          <div class="eyes"><i></i><i></i></div>
-          <div class="mirror"></div>
-        </div>
-        <span class="mini-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></span>
-        <div class="cap"><h3>Satisfação real</h3><p>"Olha o reflexo que ficou!"</p></div>
-      </div>
-    </div>
-
-    <p class="media-note reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg> Resultados reais, sem truque de foto.</p>
-
-    <div style="margin-top:28px" class="reveal">
-      <div class="cta-block">
-        <a class="cta" href="#oferta" role="button">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18H3a1 1 0 0 1-1-1V8a2 2 0 0 1 2-2h11v9"/><path d="M14 6h5l3 4v5a1 1 0 0 1-1 1h-2"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M9 18h7"/></svg>
-          <span>RECEBER EM CASA E PAGAR SOMENTE NA ENTREGA</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 6. DEMONSTRAÇÃO EM VÍDEO ============ -->
-<section class="demo" id="demonstracao" aria-label="Demonstração em vídeo">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker">Demonstração em vídeo</span>
-      <h2>O resultado que você vê com os próprios olhos</h2>
-      <p>Três passos. Nada de máquina, nada de experiência.</p>
-    </div>
-
-    <!-- SUGESTÃO DE MÍDIA: vídeo vertical real da aplicação, dividido nos 3 passos abaixo.
-         Objetivo: modelar o comportamento (observational learning) e provar facilidade. -->
-    <div class="demo-steps">
-      <div class="demo-step reveal" data-media="Vídeo 1/3: aplicação da resina no painel/capô.">
-        <div class="media">
-          <span class="stepno">PASSO 1</span>
-          <span class="ph-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l6 6-9 9H5v-6z"/></svg></span>
-        </div>
-        <div class="body">
-          <h3>Aplicar</h3>
-          <p>Aplique a resina sobre a superfície limpa.</p>
-        </div>
-      </div>
-      <div class="demo-step reveal" data-media="Vídeo 2/3: espalhamento com pano de microfibra em movimentos circulares.">
-        <div class="media">
-          <span class="stepno">PASSO 2</span>
-          <span class="ph-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 5c-2 2-3 6-1 10s8 4 6 6-8-2-10-4S6 8 8 6s4-2 6-1"/><path d="M8 15c-2 1-4 3-5 5"/></svg></span>
-        </div>
-        <div class="body">
-          <h3>Espalhar</h3>
-          <p>Espalhe com um pano até uniformizar.</p>
-        </div>
-      </div>
-      <div class="demo-step reveal" data-media="Vídeo 3/3: close no reflexo e brilho final ao sol.">
-        <div class="media">
-          <span class="stepno">PASSO 3</span>
-          <span class="ph-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-        </div>
-        <div class="body">
-          <h3>Resultado</h3>
-          <p>Brilho intenso e visual renovado na hora.</p>
-        </div>
-      </div>
-    </div>
-
-    <div style="margin-top:28px" class="reveal">
-      <div class="cta-block">
-        <a class="cta" href="#oferta" role="button">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18H3a1 1 0 0 1-1-1V8a2 2 0 0 1 2-2h11v9"/><path d="M14 6h5l3 4v5a1 1 0 0 1-1 1h-2"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M9 18h7"/></svg>
-          <span>RECEBER EM CASA E PAGAR SOMENTE NA ENTREGA</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 7. COMO FUNCIONA ============ -->
-<section class="how" aria-label="Como funciona">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker">Simples assim</span>
-      <h2>Como funciona</h2>
-    </div>
-    <div class="how-steps">
-      <div class="how-step reveal">
-        <span class="n">1</span>
-        <div>
-          <h3>Aplicar</h3>
-          <p>Na superfície limpa.</p>
-        </div>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-      </div>
-      <div class="how-step reveal">
-        <span class="n">2</span>
-        <div>
-          <h3>Espalhar</h3>
-          <p>Com um pano macio.</p>
-        </div>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-      </div>
-      <div class="how-step reveal">
-        <span class="n">3</span>
-        <div>
-          <h3>Admirar</h3>
-          <p>O brilho voltou.</p>
-        </div>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 8. BLOCO DE CONFIANÇA ============ -->
-<section class="trust" aria-label="Confiança e ausência de risco">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker">Zero risco</span>
-      <h2>POR QUE VOCÊ NÃO CORRE NENHUM RISCO</h2>
-    </div>
-    <p class="trust-quote reveal">"Se a Resina Extreme não chegar até você, <span class="green">você não paga nada.</span>"</p>
-    <div class="trust-grid">
-      <div class="trust-item reveal">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
-        <div><h3>Sem cartão</h3><p>Você não usa cartão em momento algum.</p></div>
-      </div>
-      <div class="trust-item reveal">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 10h8l-1 4H9z"/></svg></span>
-        <div><h3>Sem PIX antecipado</h3><p>Nenhum pagamento antes do produto chegar.</p></div>
-      </div>
-      <div class="trust-item reveal">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg></span>
-        <div><h3>Sem pagamento adiantado</h3><p>Nada de "depósito" ou sinal.</p></div>
-      </div>
-      <div class="trust-item reveal">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></span>
-        <div><h3>Recebe primeiro</h3><p>O produto chega na sua casa antes de você pagar.</p></div>
-      </div>
-      <div class="trust-item reveal">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.9 4.9l2.8 2.8"/><path d="M16.3 16.3l2.8 2.8"/><path d="M4.9 19.1l2.8-2.8"/><path d="M16.3 7.7l2.8-2.8"/></svg></span>
-        <div><h3>Depois paga</h3><p>Só paga quando estiver com o produto em mãos.</p></div>
-      </div>
-      <div class="trust-item reveal">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18H3a1 1 0 0 1-1-1V8a2 2 0 0 1 2-2h11v9"/><path d="M14 6h5l3 4v5a1 1 0 0 1-1 1h-2"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M9 18h7"/></svg></span>
-        <div><h3>Frete grátis</h3><p>Para todo o Brasil, sem custo extra.</p></div>
-      </div>
-    </div>
-
-    <div class="trust-flow reveal" aria-label="Como funciona o pagamento na entrega">
-      <div class="tf-step">
-        <span class="tfic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v13H4z"/><path d="M4 9h16"/><path d="M8 13h3"/></svg></span>
-        <h4>Você escolhe</h4>
-        <p>Sem pagar nada</p>
-      </div>
-      <div class="tf-step">
-        <span class="tfic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18H3a1 1 0 0 1-1-1V8a2 2 0 0 1 2-2h11v9"/><path d="M14 6h5l3 4v5a1 1 0 0 1-1 1h-2"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M9 18h7"/></svg></span>
-        <h4>Recebe em casa</h4>
-        <p>Frete grátis</p>
-      </div>
-      <div class="tf-step">
-        <span class="tfic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-        <h4>Confere o produto</h4>
-        <p>Você decide</p>
-      </div>
-      <div class="tf-step">
-        <span class="tfic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-        <h4>Só então paga</h4>
-        <p>Na entrega</p>
-      </div>
-    </div>
-
-    <div style="margin-top:28px" class="reveal">
-      <div class="cta-block">
-        <a class="cta" href="#oferta" role="button">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18H3a1 1 0 0 1-1-1V8a2 2 0 0 1 2-2h11v9"/><path d="M14 6h5l3 4v5a1 1 0 0 1-1 1h-2"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M9 18h7"/></svg>
-          <span>RECEBER EM CASA E PAGAR SOMENTE NA ENTREGA</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 9. DEPOIMENTOS ============ -->
-<section class="testi" aria-label="Depoimentos">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker">Quem usou, aprovou</span>
-      <h2>Clientes de todo o Brasil</h2>
-      <p>Pessoas como você, que também desconfiavam de comprar online.</p>
-    </div>
-    <div class="reveal" style="text-align:center;margin-bottom:22px">
-      <span class="testi-badge">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg>
-        4,8/5 · média de avaliações reais
-      </span>
-    </div>
-    <div class="testi-grid">
-      <div class="testi-card reveal">
-        <div class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg></div>
-        <p>"Testei em metade do capô para comparar. A diferença no sol foi absurda. E recebi primeiro, paguei só na entrega."</p>
-        <div class="who">
-          <span class="avatar" style="background:#1e40af">CM</span>
-          <div><div class="nm">Carlos Menezes</div><div class="ct">Belo Horizonte · MG</div></div>
-        </div>
-      </div>
-      <div class="testi-card reveal">
-        <div class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg></div>
-        <p>"Meu carro de 8 anos parecia novo. No estacionamento perguntaram se eu tinha feito polimento."</p>
-        <div class="who">
-          <span class="avatar" style="background:#7c3aed">SR</span>
-          <div><div class="nm">Sandra Ribeiro</div><div class="ct">Curitiba · PR</div></div>
-        </div>
-      </div>
-      <div class="testi-card reveal">
-        <div class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg></div>
-        <p>"Sempre desconfiei de compra pela internet. Como paguei só quando recebi, resolvi arriscar. Valeu muito a pena."</p>
-        <div class="who">
-          <span class="avatar" style="background:#0d9488">JF</span>
-          <div><div class="nm">Jorge Farias</div><div class="ct">Recife · PE</div></div>
-        </div>
-      </div>
-      <div class="testi-card reveal">
-        <div class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg></div>
-        <p>"Não queria gastar com polimento. Apliquei em 15 minutos e o brilho voltou igual."</p>
-        <div class="who">
-          <span class="avatar" style="background:#b45309">MC</span>
-          <div><div class="nm">Marlene Costa</div><div class="ct">Porto Alegre · RS</div></div>
-        </div>
-      </div>
-      <div class="testi-card reveal">
-        <div class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg></div>
-        <p>"Apliquei na moto e no carro. Praticidade total, sem máquina e sem bagunça."</p>
-        <div class="who">
-          <span class="avatar" style="background:#2563eb">ES</span>
-          <div><div class="nm">Edvaldo Souza</div><div class="ct">Goiânia · GO</div></div>
-        </div>
-      </div>
-      <div class="testi-card reveal">
-        <div class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg></div>
-        <p>"Meu carro ficou com acabamento de lava-rápido. Deu para ver meu prédio refletido na pintura."</p>
-        <div class="who">
-          <span class="avatar" style="background:#db2777">PA</span>
-          <div><div class="nm">Patrícia Alves</div><div class="ct">Salvador · BA</div></div>
-        </div>
-      </div>
-      <div class="testi-card reveal">
-        <div class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg></div>
-        <p>"Nunca vi o carro com esse brilho. Brilhou na hora, fiquei surpreendido."</p>
-        <div class="who">
-          <span class="avatar" style="background:#65a30d">AL</span>
-          <div><div class="nm">Antônio Lima</div><div class="ct">Fortaleza · CE</div></div>
-        </div>
-      </div>
-      <div class="testi-card reveal">
-        <div class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg></div>
-        <p>"Chegou rápido, paguei ao receber. O resultado ao sol é de dar orgulho."</p>
-        <div class="who">
-          <span class="avatar" style="background:#c026d3">RC</span>
-          <div><div class="nm">Rita Campos</div><div class="ct">Campinas · SP</div></div>
-        </div>
-      </div>
-      <div class="testi-card reveal">
-        <div class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg></div>
-        <p>"Fazia cera todo mês. A resina durou mais que a cera que eu usava. Melhor custo-benefício."</p>
-        <div class="who">
-          <span class="avatar" style="background:#0284c7">RD</span>
-          <div><div class="nm">Roberto Dias</div><div class="ct">São Paulo · SP</div></div>
-        </div>
-      </div>
-      <div class="testi-card reveal">
-        <div class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.6-6.3 4.6L8 13.7 2 9.2h7.6z"/></svg></div>
-        <p>"O frete grátis chegou até aqui numa boa embalagem. Aplicação simples, resultado profissional."</p>
-        <div class="who">
-          <span class="avatar" style="background:#16a34a">DM</span>
-          <div><div class="nm">Denise Moura</div><div class="ct">Manaus · AM</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 10. COMPARAÇÃO ============ -->
-<section class="compare" aria-label="Comparação">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker">Compare e decida</span>
-      <h2>Resina Extreme vs. o que você já conhece</h2>
-    </div>
-    <div class="compare-table-wrap reveal">
-      <table class="compare-table">
-        <thead>
-          <tr>
-            <th>Comparação</th>
-            <th class="col-resina">Resina Extreme <span class="rec">RECOMENDADO</span></th>
-            <th>Polimento Tradicional</th>
-            <th>Cera Comum</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Facilidade</td>
-            <td class="col-resina"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> <b>Você mesmo faz</b><br><span class="muted">sem máquina, sem técnica</span></td>
-            <td><svg class="xd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg> Requer máquina e técnica</td>
-            <td><svg class="mid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v6l4 2"/></svg> Média, várias camadas</td>
-          </tr>
-          <tr>
-            <td>Custo</td>
-            <td class="col-resina"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> <b>Baixo</b><br><span class="muted">em combo com frete grátis</span></td>
-            <td><svg class="xd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg> Alto (profissional)</td>
-            <td><svg class="mid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v6l4 2"/></svg> Médio e recorrente</td>
-          </tr>
-          <tr>
-            <td>Resultado visual</td>
-            <td class="col-resina"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> <b>Brilho profundo e renovado</b></td>
-            <td><svg class="mid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v6l4 2"/></svg> Bom, mas desgasta a pintura</td>
-            <td><svg class="mid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v6l4 2"/></svg> Brilho básico e temporário</td>
-          </tr>
-          <tr>
-            <td>Tempo gasto</td>
-            <td class="col-resina"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> <b>15 minutos</b></td>
-            <td><svg class="xd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg> Horas ou dia inteiro</td>
-            <td><svg class="mid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v6l4 2"/></svg> 1h+ e reaplicação frequente</td>
-          </tr>
-          <tr>
-            <td>Praticidade</td>
-            <td class="col-resina"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> <b>Alta</b><br><span class="muted">faz em casa, quando quiser</span></td>
-            <td><svg class="xd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg> Baixa, depende de terceiros</td>
-            <td><svg class="mid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v6l4 2"/></svg> Média</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="compare-legend reveal">
-      <span><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Vantagem</span>
-      <span><svg class="mid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v6l4 2"/></svg> Neutro</span>
-      <span><svg class="xd" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg> Desvantagem</span>
-    </div>
-    <div style="margin-top:28px" class="reveal">
-      <div class="cta-block">
-        <a class="cta" href="#oferta" role="button">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18H3a1 1 0 0 1-1-1V8a2 2 0 0 1 2-2h11v9"/><path d="M14 6h5l3 4v5a1 1 0 0 1-1 1h-2"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M9 18h7"/></svg>
-          <span>RECEBER EM CASA E PAGAR SOMENTE NA ENTREGA</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 11. OFERTA ============ -->
-<section class="offer" id="oferta" aria-label="Oferta">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker">Oferta por tempo limitado</span>
-      <h2>Escolha seu combo</h2>
-      <p>Você recebe em casa e <strong style="color:var(--green-l)">só paga na entrega</strong>. Frete grátis em todas as opções.</p>
-    </div>
-
-    <div class="offer-grid">
-      <!-- OFERTA 1 · GOOD -->
-      <article class="offer-card reveal" data-media="Foto do kit com 2 frascos. Objetivo: preço de entrada acessível.">
-        <div class="offer-head">
-          <h3>COMPRE 1 E LEVE 2</h3>
-          <div class="sub">Ideal para testar sem medo</div>
-        </div>
-        <div class="offer-units">
-          <span class="unit-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>2 frascos de Resina Extreme</span>
-        </div>
-        <div class="offer-price">
-          <span class="from">De R$ 129,80</span>
-          <span class="to">R$ 109,99</span>
-          <span class="unit">ou pague na entrega, sem acréscimo</span>
-        </div>
-        <span class="offer-save"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>Você economiza R$ 19,81</span>
-        <div class="offer-meta">
-          <span class="om"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18H3a1 1 0 0 1-1-1V8a2 2 0 0 1 2-2h11v9"/><path d="M14 6h5l3 4v5a1 1 0 0 1-1 1h-2"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M9 18h7"/></svg><span>Frete grátis</span></span>
-          <span class="om"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.9 4.9l2.8 2.8"/><path d="M16.3 16.3l2.8 2.8"/><path d="M4.9 19.1l2.8-2.8"/><path d="M16.3 7.7l2.8-2.8"/></svg><span>Pague na entrega</span></span>
-          <span class="om"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span>Sem cartão</span></span>
-        </div>
-        <a class="cta" href="https://entrega.logzz.com.br/pay/memw3d6ox/loure-compre-3-e-leve-4" rel="noopener" role="button">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18H3a1 1 0 0 1-1-1V8a2 2 0 0 1 2-2h11v9"/><path d="M14 6h5l3 4v5a1 1 0 0 1-1 1h-2"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M9 18h7"/></svg>
-          <span>RECEBER 2 FRASCOS EM CASA</span>
-        </a>
-        <p class="offer-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Recebe primeiro · Paga depois, na entrega</p>
-      </article>
-
-      <!-- OFERTA 2 · BETTER · DESTAQUE -->
-      <article class="offer-card featured reveal" data-media="Foto do kit com 3 frascos + brinde. Objetivo: destaque visual da opção mais escolhida.">
-        <span class="offer-tag">⭐ MAIS ESCOLHIDA</span>
-        <div class="offer-head">
-          <h3>COMPRE 2 E LEVE 3</h3>
-          <div class="sub">O combo favorito de quem já conhece o resultado</div>
-        </div>
-        <div class="offer-units">
-          <span class="unit-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>3 frascos de Resina Extreme</span>
-        </div>
-        <div class="offer-price">
-          <span class="from">De R$ 194,70</span>
-          <span class="to">R$ 147,00</span>
-          <span class="unit">ou pague na entrega, sem acréscimo</span>
-        </div>
-        <span class="offer-save"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>Você economiza R$ 47,70</span>
-        <div class="offer-meta">
-          <span class="om"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18H3a1 1 0 0 1-1-1V8a2 2 0 0 1 2-2h11v9"/><path d="M14 6h5l3 4v5a1 1 0 0 1-1 1h-2"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M9 18h7"/></svg><span>Frete grátis</span></span>
-          <span class="om"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.9 4.9l2.8 2.8"/><path d="M16.3 16.3l2.8 2.8"/><path d="M4.9 19.1l2.8-2.8"/><path d="M16.3 7.7l2.8-2.8"/></svg><span>Pague na entrega</span></span>
-          <span class="om"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span>Sem cartão</span></span>
-        </div>
-        <a class="cta" href="https://entrega.logzz.com.br/pay/memw3d6ox/cidjm-compre-2-e-leve-3" rel="noopener" role="button">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18H3a1 1 0 0 1-1-1V8a2 2 0 0 1 2-2h11v9"/><path d="M14 6h5l3 4v5a1 1 0 0 1-1 1h-2"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M9 18h7"/></svg>
-          <span>RECEBER 3 FRASCOS EM CASA</span>
-        </a>
-        <p class="offer-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Recebe primeiro · Paga depois, na entrega</p>
-      </article>
-
-      <!-- OFERTA 3 · BEST -->
-      <article class="offer-card reveal" data-media="Foto do kit com 4 frascos. Objetivo: maior economia por frasco.">
-        <span class="offer-tag">🔥 MELHOR CUSTO-BENEFÍCIO</span>
-        <div class="offer-head">
-          <h3>COMPRE 3 E LEVE 4</h3>
-          <div class="sub">Para carro, moto e quem quer estoque</div>
-        </div>
-        <div class="offer-units">
-          <span class="unit-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>4 frascos de Resina Extreme</span>
-        </div>
-        <div class="offer-price">
-          <span class="from">De R$ 259,60</span>
-          <span class="to">R$ 187,00</span>
-          <span class="unit">ou pague na entrega, sem acréscimo</span>
-        </div>
-        <span class="offer-save"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>Você economiza R$ 72,60</span>
-        <div class="offer-meta">
-          <span class="om"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18H3a1 1 0 0 1-1-1V8a2 2 0 0 1 2-2h11v9"/><path d="M14 6h5l3 4v5a1 1 0 0 1-1 1h-2"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M9 18h7"/></svg><span>Frete grátis</span></span>
-          <span class="om"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.9 4.9l2.8 2.8"/><path d="M16.3 16.3l2.8 2.8"/><path d="M4.9 19.1l2.8-2.8"/><path d="M16.3 7.7l2.8-2.8"/></svg><span>Pague na entrega</span></span>
-          <span class="om"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span>Sem cartão</span></span>
-        </div>
-        <a class="cta" href="https://entrega.logzz.com.br/pay/memw3d6ox/loure-compre-3-e-leve-4" rel="noopener" role="button">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18H3a1 1 0 0 1-1-1V8a2 2 0 0 1 2-2h11v9"/><path d="M14 6h5l3 4v5a1 1 0 0 1-1 1h-2"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M9 18h7"/></svg>
-          <span>RECEBER 4 FRASCOS EM CASA</span>
-        </a>
-        <p class="offer-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Recebe primeiro · Paga depois, na entrega</p>
-      </article>
-    </div>
-
-    <div class="offer-secure reveal">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
-      <span>Compra protegida</span><span class="sep"></span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.9 4.9l2.8 2.8"/><path d="M16.3 16.3l2.8 2.8"/><path d="M4.9 19.1l2.8-2.8"/><path d="M16.3 7.7l2.8-2.8"/></svg>
-      <span>Pague na entrega</span><span class="sep"></span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18H3a1 1 0 0 1-1-1V8a2 2 0 0 1 2-2h11v9"/><path d="M14 6h5l3 4v5a1 1 0 0 1-1 1h-2"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M9 18h7"/></svg>
-      <span>Frete grátis em todo o Brasil</span>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 12. FAQ ============ -->
-<section class="faq" aria-label="Perguntas frequentes">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker">Dúvidas</span>
-      <h2>Perguntas frequentes</h2>
-    </div>
-    <div class="faq-list">
-      <details class="faq-item reveal">
-        <summary>Funciona em qualquer carro? <span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="a">Sim. A Resina Extreme pode ser aplicada em qualquer veículo — carro, moto, utilitário — com pintura em bom estado. É só seguir o modo de uso simples do frasco.</div>
-      </details>
-      <details class="faq-item reveal">
-        <summary>É difícil aplicar? <span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="a">Não. Não é preciso técnica nem experiência. Basta limpar a superfície, aplicar e espalhar com um pano macio. A maioria das pessoas aplica em cerca de 15 minutos.</div>
-      </details>
-      <details class="faq-item reveal">
-        <summary>Preciso de equipamento? <span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="a">Não. Você usa apenas a resina e um pano de microfibra limpo. Nada de máquina polidora, politriz ou produtos extras.</div>
-      </details>
-      <details class="faq-item reveal">
-        <summary>Pode danificar a pintura? <span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="a">Não. A Resina Extreme foi formulada para uso na superfície da pintura, sem ação abrasiva. Não remove camada de verniz como fazem polimentos agressivos.</div>
-      </details>
-      <details class="faq-item reveal">
-        <summary>Quanto tempo dura o efeito? <span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="a">A durabilidade varia conforme o uso e as condições do dia a dia, mas o brilho costuma se manter por semanas. Reaplicar é rápido e simples.</div>
-      </details>
-      <details class="faq-item reveal">
-        <summary>Como funciona o pagamento na entrega? <span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="a">Simples: você faz o pedido sem pagar nada agora. O produto chega até sua casa e só então você paga, no momento da entrega. Você recebe primeiro, confere e paga depois.</div>
-      </details>
-      <details class="faq-item reveal">
-        <summary>O frete é grátis? <span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="a">Sim. O frete é grátis para todo o Brasil em todas as opções da oferta.</div>
-      </details>
-      <details class="faq-item reveal">
-        <summary>Preciso pagar antecipado? <span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="a">Não. Não há pagamento antecipado, depósito ou sinal. Você só paga quando o produto chegar. Sem cartão, sem PIX antes do recebimento.</div>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 13. CTA FINAL ============ -->
-<section class="final-cta" aria-label="Chamada final">
-  <div class="wrap">
-    <h2 class="reveal">Seu carro merece <span class="green">voltar a brilhar</span>.</h2>
-    <p class="sub reveal">E você não precisa pagar nada agora. Receba a Resina Extreme em casa, confira com os próprios olhos e só pague na entrega.</p>
-    <div class="cta-block reveal">
-      <a class="cta" href="#oferta" role="button">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18H3a1 1 0 0 1-1-1V8a2 2 0 0 1 2-2h11v9"/><path d="M14 6h5l3 4v5a1 1 0 0 1-1 1h-2"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M9 18h7"/></svg>
-        <span>RECEBER EM CASA E PAGAR SOMENTE NA ENTREGA</span>
-      </a>
-    </div>
-    <div class="final-badges reveal">
-      <span class="fb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.9 4.9l2.8 2.8"/><path d="M16.3 16.3l2.8 2.8"/><path d="M4.9 19.1l2.8-2.8"/><path d="M16.3 7.7l2.8-2.8"/></svg>Recebe primeiro</span>
-      <span class="fb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Paga depois</span>
-      <span class="fb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Sem cartão</span>
-      <span class="fb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18H3a1 1 0 0 1-1-1V8a2 2 0 0 1 2-2h11v9"/><path d="M14 6h5l3 4v5a1 1 0 0 1-1 1h-2"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M9 18h7"/></svg>Frete grátis</span>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 14. CTA FLUTUANTE FIXO ============ -->
-<nav class="float-cta" id="floatCta" aria-label="Chamada para ação fixa">
-  <div class="wrap">
-    <a class="cta" href="#oferta" role="button">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18H3a1 1 0 0 1-1-1V8a2 2 0 0 1 2-2h11v9"/><path d="M14 6h5l3 4v5a1 1 0 0 1-1 1h-2"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M9 18h7"/></svg>
-      <span>RECEBER EM CASA E PAGAR SOMENTE NA ENTREGA</span>
-    </a>
-  </div>
-</nav>
-
-<!-- ============ FOOTER ============ -->
-<footer class="footer">
-  <div class="wrap">
-    <div class="brand">RESINA <span>EXTREME</span></div>
-    <p>Produto para estética automotiva. Resultados podem variar conforme o estado da pintura e a forma de aplicação. Imagens meramente ilustrativas.</p>
-    <p class="legal">Você recebe primeiro e só paga depois, na entrega. Sem pagamento antecipado. Frete grátis para todo o Brasil.</p>
-    <p class="legal" style="margin-top:6px">© 2026 Resina Extreme. Todos os direitos reservados.</p>
-  </div>
-</footer>
-
-<script>
-(function(){
-  'use strict';
-  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* --- Scroll reveal --- */
-  var reveals = document.querySelectorAll('.reveal');
-  if (prefersReduced || !('IntersectionObserver' in window)) {
-    reveals.forEach(function(el){ el.classList.add('in'); });
-  } else {
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if (entry.isIntersecting){
-          entry.target.classList.add('in');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    reveals.forEach(function(el){ io.observe(el); });
-  }
-
-  /* --- Floating CTA (aparece após passar o hero) --- */
-  var floatCta = document.getElementById('floatCta');
-  var hero = document.querySelector('.hero');
-  var shown = false;
-  function onScroll(){
-    if (!hero || !floatCta) return;
-    var rect = hero.getBoundingClientRect();
-    if (rect.bottom < 0 && !shown){ floatCta.classList.add('show'); shown = true; }
-    else if (rect.bottom >= 0 && shown){ floatCta.classList.remove('show'); shown = false; }
-  }
-  if (floatCta){
-    window.addEventListener('scroll', onScroll, { passive:true });
-    window.addEventListener('resize', onScroll, { passive:true });
-    onScroll();
-  }
-
-  /* --- Botão play do vídeo: rola até a demonstração --- */
-  var playBtns = document.querySelectorAll('[data-scroll]');
-  playBtns.forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var target = document.querySelector(btn.getAttribute('data-scroll'));
-      if (target) target.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'start' });
-    });
-  });
-
-  /* --- Before/After slider --- */
-  var range = document.getElementById('ba-range');
-  var beforeLayer = document.getElementById('ba-before');
-  if (range && beforeLayer){
-    function sync(){
-      var v = range.value;
-      beforeLayer.style.width = v + '%';
-      range.setAttribute('aria-valuetext', 'Comparação antes e depois: ' + v + '%');
-    }
-    range.addEventListener('input', sync);
-    sync();
-  }
-})();
-</script>
+  </footer>
 </body>
 </html>
