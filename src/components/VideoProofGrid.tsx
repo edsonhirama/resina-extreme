@@ -1,34 +1,27 @@
-﻿import React from "react";
+import React from "react";
 
 export function VideoProofGrid() {
-  const proofs = [
+  const cards = [
     {
-      title: "Reflexo Espelhado em 4K",
-      desc: "Veja a nitidez das árvores e prédios refletidos na lataria após a aplicação da resina.",
-      tag: "Lataria & Capô",
-      badge: "Brilho Vitrificado",
-      icon: "✨",
+      img: "/images/paint_application.jpg",
+      tag: "APLICAÇÃO RÁPIDA",
+      tagColor: "bg-emerald-950/80 border-emerald-500/30 text-emerald-400",
+      title: "Você Mesmo Aplica em Casa",
+      desc: "Sem sujeira e sem máquinas pesadas. Apenas o frasco e um pano de microfibra macio.",
     },
     {
-      title: "Efeito Hidrorrepelente (Anti-Água)",
-      desc: "A água bate e escorre em gotas redondas, sem acumular sujeira ou marcas de chuva ácida.",
-      tag: "Teste da Água",
-      badge: "Blindagem",
-      icon: "💧",
+      img: "/images/water_beading.jpg",
+      tag: "BLINDAGEM HIDROFÓBICA",
+      tagColor: "bg-teal-950/80 border-teal-500/30 text-teal-400",
+      title: "Efeito Anti-Água & Chuva Ácida",
+      desc: "A água e o barro escorrem em gotas sem grudar na lataria, facilitando as próximas lavagens.",
     },
     {
-      title: "Aplicação Sem Segredo",
-      desc: "Não necessita de politriz elétrica ou oficina. Apenas um pano macio e 15 minutos.",
-      tag: "Fácil Aplicação",
-      badge: "Faça Você Mesmo",
-      icon: "🧽",
-    },
-    {
-      title: "Resistência ao Sol Forte & UV",
-      desc: "Protege o verniz original contra o desbotamento causado pelo sol forte do dia a dia.",
-      tag: "Proteção Solar",
-      badge: "Barreira UV",
-      icon: "☀️",
+      img: "/images/product_kit.jpg",
+      tag: "FÓRMULA NANO CERÂMICA",
+      tagColor: "bg-amber-950/80 border-amber-500/30 text-amber-400",
+      title: "Proteção de Longa Duração",
+      desc: "Fórmula concentrada de alto rendimento para múltiplos veículos e reaplicações.",
     },
   ];
 
@@ -37,40 +30,32 @@ export function VideoProofGrid() {
       <div className="mx-auto max-w-6xl">
         <div className="text-center max-w-2xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 px-3 py-1 text-xs font-black text-emerald-400 uppercase tracking-widest mb-3">
-            TRANSFORMAÇÃO REAL
+            RESULTADO EM DETALHES
           </div>
           <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight">
-            Veja os Resultados em Detalhes
+            Veja a Tecnologia em Ação
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-gray-400">
-            A mesma tecnologia dos estúdios automotivos mais caros, direto na sua casa.
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {proofs.map((p, idx) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {cards.map((c, i) => (
             <div
-              key={idx}
-              className="group relative flex flex-col rounded-3xl border border-gray-800 bg-gray-950 p-4 transition-all duration-300 hover:border-emerald-500/50 hover:shadow-xl hover:shadow-emerald-950/40"
+              key={i}
+              className="flex flex-col rounded-3xl border border-gray-800 bg-gray-950 overflow-hidden shadow-xl hover:border-emerald-500/40 transition-all"
             >
-              {/* Media Container / Video Loop Slot */}
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900 via-gray-800 to-gray-950 flex flex-col items-center justify-center p-4 border border-gray-800/80">
-                <div className="text-4xl mb-2 group-hover:scale-125 transition-transform duration-300">
-                  {p.icon}
-                </div>
-                <span className="text-[11px] font-black text-emerald-400 uppercase tracking-wider bg-emerald-950/80 px-2.5 py-1 rounded-full border border-emerald-500/30">
-                  {p.badge}
-                </span>
-
-                <div className="absolute top-2 left-2 rounded-md bg-black/80 px-2 py-0.5 text-[10px] font-bold text-gray-300">
-                  {p.tag}
-                </div>
+              <div className="aspect-[4/3] w-full overflow-hidden bg-gray-900">
+                <img
+                  src={c.img}
+                  alt={c.title}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
               </div>
-
-              {/* Text Info */}
-              <div className="mt-4 flex flex-col flex-grow">
-                <h3 className="text-base font-black text-white leading-snug">{p.title}</h3>
-                <p className="mt-2 text-xs sm:text-sm text-gray-400 leading-relaxed">{p.desc}</p>
+              <div className="p-5 flex flex-col flex-grow">
+                <div className={inline-block self-start rounded-md border px-2.5 py-0.5 text-[11px] font-black uppercase mb-2 }>
+                  {c.tag}
+                </div>
+                <h3 className="text-lg font-black text-white">{c.title}</h3>
+                <p className="mt-2 text-xs sm:text-sm text-gray-400">{c.desc}</p>
               </div>
             </div>
           ))}

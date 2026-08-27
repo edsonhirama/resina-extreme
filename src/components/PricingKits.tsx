@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 
 export function PricingKits() {
   const plans = [
@@ -10,6 +10,7 @@ export function PricingKits() {
       originalPrice: "R$ 129,80",
       price: "R$ 109,99",
       savings: "Economize R$ 19,81",
+      img: "/images/product_kit.jpg",
       link: "https://entrega.logzz.com.br/pay/memw3d6ox/loure-compre-3-e-leve-4",
       highlight: false,
       badge: "KIT INICIANTE",
@@ -22,6 +23,7 @@ export function PricingKits() {
       originalPrice: "R$ 194,70",
       price: "R$ 147,00",
       savings: "Economize R$ 47,70",
+      img: "/images/product_kit.jpg",
       link: "https://entrega.logzz.com.br/pay/memw3d6ox/cidjm-compre-2-e-leve-3",
       highlight: true,
       badge: "⭐ MAIS ESCOLHIDO",
@@ -34,6 +36,7 @@ export function PricingKits() {
       originalPrice: "R$ 259,60",
       price: "R$ 187,00",
       savings: "Economize R$ 72,60",
+      img: "/images/product_kit.jpg",
       link: "https://entrega.logzz.com.br/pay/memw3d6ox/loure-compre-3-e-leve-4",
       highlight: false,
       badge: "🔥 MÁXIMA ECONOMIA",
@@ -56,44 +59,41 @@ export function PricingKits() {
           </p>
         </div>
 
-        {/* Pricing Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
           {plans.map((plan) => (
             <div
               key={plan.id}
-              className={`relative flex flex-col justify-between rounded-3xl p-6 sm:p-8 transition-all duration-300 ${
-                plan.highlight
-                  ? "bg-gradient-to-b from-emerald-950/80 via-gray-900 to-gray-950 border-2 border-emerald-400 shadow-2xl shadow-emerald-500/20 md:-translate-y-2"
-                  : "bg-gray-900/70 border border-gray-800 hover:border-gray-700"
-              }`}
+              className={
+elative flex flex-col justify-between rounded-3xl p-6 sm:p-8 transition-all duration-300 }
             >
-              {/* Badge */}
               <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
                 <span
-                  className={`rounded-full px-4 py-1 text-xs font-black uppercase tracking-wider shadow-lg ${
-                    plan.highlight
-                      ? "bg-emerald-400 text-gray-950 shadow-emerald-500/40"
-                      : "bg-amber-400 text-gray-950"
-                  }`}
+                  className={
+ounded-full px-4 py-1 text-xs font-black uppercase tracking-wider shadow-lg }
                 >
                   {plan.badge}
                 </span>
               </div>
 
               <div>
-                {/* Header */}
                 <div className="text-center mt-2">
                   <h3 className="text-xl sm:text-2xl font-black text-white">{plan.name}</h3>
                   <p className="mt-1 text-xs text-gray-400 font-semibold">{plan.tagline}</p>
                 </div>
 
-                {/* Units Tag */}
-                <div className="mt-4 rounded-xl bg-gray-950/80 border border-gray-800 p-2.5 text-center text-xs sm:text-sm font-bold text-emerald-400">
+                <div className="my-4 h-36 flex items-center justify-center">
+                  <img
+                    src={plan.img}
+                    alt={plan.units}
+                    className="h-full object-contain rounded-2xl border border-gray-800 shadow"
+                  />
+                </div>
+
+                <div className="mt-2 rounded-xl bg-gray-950/80 border border-gray-800 p-2 text-center text-xs sm:text-sm font-bold text-emerald-400">
                   {plan.units}
                 </div>
 
-                {/* Price Display */}
-                <div className="mt-6 text-center">
+                <div className="mt-4 text-center">
                   <div className="text-xs sm:text-sm font-bold text-gray-500 line-through">
                     {plan.originalPrice}
                   </div>
@@ -105,8 +105,7 @@ export function PricingKits() {
                   </div>
                 </div>
 
-                {/* Benefits List */}
-                <ul className="mt-6 space-y-2.5 text-xs sm:text-sm text-gray-300 font-semibold border-t border-gray-800 pt-5">
+                <ul className="mt-5 space-y-2 text-xs sm:text-sm text-gray-300 font-semibold border-t border-gray-800 pt-4">
                   <li className="flex items-center gap-2">
                     <span className="text-emerald-400 font-black">✓</span>
                     <span>Frete Grátis para todo Brasil</span>
@@ -119,32 +118,19 @@ export function PricingKits() {
                     <span className="text-emerald-400 font-black">✓</span>
                     <span>Sem cartão e sem PIX adiantado</span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-emerald-400 font-black">✓</span>
-                    <span>Envio com rastreio protegido</span>
-                  </li>
                 </ul>
               </div>
 
-              {/* CTA Button */}
-              <div className="mt-8">
+              <div className="mt-6">
                 <a
                   href={plan.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`group flex w-full items-center justify-center gap-2 rounded-2xl p-4 text-sm sm:text-base font-black transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] ${
-                    plan.highlight
-                      ? "bg-gradient-to-r from-emerald-500 to-teal-400 text-gray-950 shadow-xl shadow-emerald-500/30 hover:brightness-110"
-                      : "bg-gray-800 text-white hover:bg-gray-700"
-                  }`}
+                  className={group flex w-full items-center justify-center gap-2 rounded-2xl p-4 text-sm sm:text-base font-black transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] }
                 >
                   <span>RECEBER E PAGAR NA ENTREGA</span>
                   <span className="transition-transform group-hover:translate-x-1">→</span>
                 </a>
-
-                <p className="mt-2 text-center text-[11px] text-gray-400 font-medium">
-                  🔒 Compra 100% Segura sem risco
-                </p>
               </div>
             </div>
           ))}
