@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import {
   ShieldCheck,
   Sparkles,
@@ -12,14 +12,13 @@ import {
   Truck,
   Car,
 } from "lucide-react";
+import { AutoPauseYouTube } from "@/components/AutoPauseYouTube";
 
 interface HeroSectionProps {
   onCtaClick?: () => void;
 }
 
 export function HeroSection({ onCtaClick }: HeroSectionProps) {
-  const [isPlaying, setIsPlaying] = useState(true);
-
   const scrollToOffer = () => {
     if (onCtaClick) {
       onCtaClick();
@@ -89,30 +88,31 @@ export function HeroSection({ onCtaClick }: HeroSectionProps) {
           </div>
         </div>
 
-        {/* Central Visual Showcase (Vertical 9:16 Video Hero) & CTA Area */}
+        {/* Central Visual Showcase (Vertical 9:16 Video com AutoPause) & CTA Area */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center max-w-5xl mx-auto">
           {/* Left / 9:16 Vertical Video Container */}
           <div className="lg:col-span-6 flex justify-center">
             <div className="relative w-full max-w-[320px] rounded-3xl border-2 border-amber-500/40 bg-surface-card p-2 sm:p-3 shadow-glow-amber overflow-hidden group">
               {/* Badges Over Video */}
-              <div className="absolute top-5 left-5 bg-black/85 backdrop-blur-md border border-amber-500/40 text-amber-400 text-[10px] font-bold px-2.5 py-1 rounded-md flex items-center gap-1.5 shadow-lg z-20">
+              <div className="absolute top-5 left-5 bg-black/85 backdrop-blur-md border border-amber-500/40 text-amber-400 text-[10px] font-bold px-2.5 py-1 rounded-md flex items-center gap-1.5 shadow-lg z-20 pointer-events-none">
                 <Sparkles className="w-3.5 h-3.5 text-amber-400" />
                 VÍDEO REAL: EFEITO ESPELHO
               </div>
 
-              <div className="absolute top-5 right-5 bg-emerald-950/90 backdrop-blur-md border border-emerald-500/50 text-emerald-300 text-[10px] font-bold px-2.5 py-1 rounded-md flex items-center gap-1.5 shadow-lg z-20">
+              <div className="absolute top-5 right-5 bg-emerald-950/90 backdrop-blur-md border border-emerald-500/50 text-emerald-300 text-[10px] font-bold px-2.5 py-1 rounded-md flex items-center gap-1.5 shadow-lg z-20 pointer-events-none">
                 <ShieldCheck className="w-3.5 h-3.5" />
                 PAGAMENTO NA ENTREGA
               </div>
 
-              {/* 9:16 Responsive Vertical Embed */}
+              {/* 9:16 Responsive Vertical Embed com AutoPause */}
               <div className="relative aspect-[9/16] w-full rounded-2xl bg-zinc-950 overflow-hidden border border-zinc-800 shadow-inner">
-                <iframe
-                  src="https://www.youtube-nocookie.com/embed/FocMjWewbtk?autoplay=1&mute=1&loop=1&playlist=FocMjWewbtk&controls=1&modestbranding=1&rel=0&playsinline=1"
+                <AutoPauseYouTube
+                  videoId="FocMjWewbtk"
                   title="Resina Extreme - Demonstração no Hero"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  className="w-full h-full object-cover border-0"
+                  autoPlay={true}
+                  muted={true}
+                  loop={true}
+                  controls={true}
                 />
               </div>
 
@@ -122,11 +122,11 @@ export function HeroSection({ onCtaClick }: HeroSectionProps) {
                   <span className="block text-gray-400 text-[9px]">Rendimento</span>
                   <span className="font-bold text-white text-[11px]">8-10 Carros</span>
                 </div>
-                <div className="bg-surface-100 rounded-lg p-1.5 border border-surface-border">
+                <div className="bg-surface-100 rounded-lg p-2 border border-surface-border">
                   <span className="block text-gray-400 text-[9px]">Durabilidade</span>
                   <span className="font-bold text-amber-400 text-[11px]">1 a 2 Meses</span>
                 </div>
-                <div className="bg-surface-100 rounded-lg p-1.5 border border-surface-border">
+                <div className="bg-surface-100 rounded-lg p-2 border border-surface-border">
                   <span className="block text-gray-400 text-[9px]">Aplicação</span>
                   <span className="font-bold text-emerald-400 text-[11px]">Em 15 Minutos</span>
                 </div>

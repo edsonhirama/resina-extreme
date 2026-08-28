@@ -1,11 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { Sparkles, Check, Clock, SprayCan as Spray, Layers, Zap, Play } from "lucide-react";
+import { AutoPauseYouTube } from "@/components/AutoPauseYouTube";
 
 export function HowToUseSection() {
-  const [showVideo, setShowVideo] = useState(false);
-
   const steps = [
     {
       step: "01",
@@ -48,7 +47,7 @@ export function HowToUseSection() {
           </p>
         </div>
 
-        {/* Grid: 3 Steps + 9:16 Video Demo */}
+        {/* Grid: 3 Steps + 9:16 Video Demo com AutoPause */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-10">
           {/* Left: 3 Steps */}
           <div className="lg:col-span-7 space-y-4">
@@ -84,7 +83,7 @@ export function HowToUseSection() {
             })}
           </div>
 
-          {/* Right: 9:16 Vertical Video Embed (Como Aplicar) */}
+          {/* Right: 9:16 Vertical Video Embed com AutoPause */}
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative w-full max-w-[300px] rounded-3xl border-2 border-amber-500/40 bg-surface-card p-2 sm:p-3 shadow-glow-amber overflow-hidden">
               <div className="text-center pb-2">
@@ -95,12 +94,13 @@ export function HowToUseSection() {
               </div>
 
               <div className="relative aspect-[9/16] w-full rounded-2xl bg-zinc-950 overflow-hidden border border-zinc-800 shadow-inner">
-                <iframe
-                  src="https://www.youtube-nocookie.com/embed/7W-KbEpvcQQ?controls=1&modestbranding=1&rel=0&playsinline=1"
+                <AutoPauseYouTube
+                  videoId="7W-KbEpvcQQ"
                   title="Como aplicar a Resina Extreme"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  className="w-full h-full object-cover border-0"
+                  autoPlay={false}
+                  muted={false}
+                  loop={false}
+                  controls={true}
                 />
               </div>
             </div>

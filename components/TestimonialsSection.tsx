@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Star, ShieldCheck, ThumbsUp, Car, CheckCircle2, Play } from "lucide-react";
+import { AutoPauseYouTube } from "@/components/AutoPauseYouTube";
 
 export function TestimonialsSection() {
   const [avatarErrors, setAvatarErrors] = useState<{ [key: number]: boolean }>({});
@@ -92,7 +93,7 @@ export function TestimonialsSection() {
           </p>
         </div>
 
-        {/* 2 UGC Real Customer 9:16 Videos Grid */}
+        {/* 2 UGC Real Customer 9:16 Videos Grid com AutoPause */}
         <div className="mb-12">
           <div className="text-center mb-6">
             <span className="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center justify-center gap-1.5">
@@ -114,14 +115,15 @@ export function TestimonialsSection() {
                   </span>
                 </div>
 
-                {/* 9:16 Vertical Video Container */}
+                {/* 9:16 Vertical Video Container com AutoPause */}
                 <div className="relative aspect-[9/16] w-full rounded-2xl bg-zinc-950 overflow-hidden border border-zinc-800 shadow-inner">
-                  <iframe
-                    src={`https://www.youtube-nocookie.com/embed/${video.id}?controls=1&modestbranding=1&rel=0&playsinline=1`}
+                  <AutoPauseYouTube
+                    videoId={video.id}
                     title={video.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                    className="w-full h-full object-cover border-0"
+                    autoPlay={false}
+                    muted={false}
+                    loop={false}
+                    controls={true}
                   />
                 </div>
 
