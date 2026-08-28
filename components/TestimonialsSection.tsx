@@ -23,12 +23,14 @@ export function TestimonialsSection() {
       id: "eiCemVgH7ek",
       title: "Cliente com Fiat Siena",
       badge: "Depoimento Real Gravado",
+      poster: "/images/capa-video-siena.png",
       desc: "Resultado no capô e na lateral após aplicar a Resina Extreme.",
     },
     {
       id: "P0OHaUvYonk",
       title: "Cliente com Carro Preto",
       badge: "Efeito Espelho Impressionante",
+      poster: "/images/capa-video-carro-preto.png",
       desc: "Veja a profundidade da cor preta e a eliminação do aspecto opaco.",
     },
   ];
@@ -81,24 +83,24 @@ export function TestimonialsSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-950/40 px-3.5 py-1 text-xs font-bold text-emerald-400 mb-3">
-            <ThumbsUp className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-950/40 px-3.5 py-1 text-xs sm:text-sm font-bold text-emerald-300 mb-3">
+            <ThumbsUp className="w-3.5 h-3.5 text-emerald-400" />
             <span>OPINIÃO DE QUEM JÁ TESTOU E APROVOU</span>
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight text-white leading-tight">
             Mais de 14.800 Proprietários Satisfeitos em Todo o Brasil
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-gray-300">
+          <p className="mt-3 text-sm sm:text-base text-gray-200">
             Veja vídeos gravados na garagem pelos próprios clientes e relatos reais de quem usa no dia a dia.
           </p>
         </div>
 
-        {/* 2 UGC Real Customer 9:16 Videos Grid com AutoPause */}
+        {/* 2 UGC Real Customer 9:16 Videos Grid com Capas Personalizadas e AutoPause */}
         <div className="mb-12">
           <div className="text-center mb-6">
-            <span className="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center justify-center gap-1.5">
-              <Play className="w-4 h-4 fill-amber-400" />
-              Depoimentos Reais Gravados por Clientes (Formato 9:16)
+            <span className="text-xs sm:text-sm font-bold text-amber-300 uppercase tracking-wider flex items-center justify-center gap-1.5">
+              <Play className="w-4 h-4 fill-amber-400 text-amber-400" />
+              Depoimentos Reais Gravados por Clientes
             </span>
           </div>
 
@@ -109,17 +111,18 @@ export function TestimonialsSection() {
                 className="rounded-3xl border-2 border-amber-500/30 bg-surface-card p-3 shadow-xl flex flex-col justify-between hover:border-amber-500/60 transition-colors"
               >
                 <div className="flex items-center justify-between mb-2 px-1">
-                  <span className="text-[11px] font-bold text-white">{video.title}</span>
-                  <span className="text-[10px] bg-emerald-950 text-emerald-300 border border-emerald-500/40 px-2 py-0.5 rounded-full font-semibold">
+                  <span className="text-xs font-bold text-white">{video.title}</span>
+                  <span className="text-[10px] bg-emerald-950 text-emerald-300 border border-emerald-500/40 px-2.5 py-0.5 rounded-full font-bold">
                     {video.badge}
                   </span>
                 </div>
 
-                {/* 9:16 Vertical Video Container com AutoPause */}
+                {/* 9:16 Vertical Video Container com Capa e AutoPause */}
                 <div className="relative aspect-[9/16] w-full rounded-2xl bg-zinc-950 overflow-hidden border border-zinc-800 shadow-inner">
                   <AutoPauseYouTube
                     videoId={video.id}
                     title={video.title}
+                    posterImage={video.poster}
                     autoPlay={false}
                     muted={false}
                     loop={false}
@@ -127,7 +130,9 @@ export function TestimonialsSection() {
                   />
                 </div>
 
-                <p className="text-[11px] text-gray-400 mt-2 px-1 text-center">{video.desc}</p>
+                <p className="text-xs text-gray-300 mt-2 px-1 text-center font-medium">
+                  {video.desc}
+                </p>
               </div>
             ))}
           </div>
@@ -136,7 +141,7 @@ export function TestimonialsSection() {
         {/* Real Customer Screenshots Grid */}
         <div className="mb-12">
           <div className="text-center mb-4">
-            <span className="text-xs font-bold text-gray-300 uppercase tracking-wider">
+            <span className="text-xs sm:text-sm font-bold text-gray-200 uppercase tracking-wider">
               Prints Reais de Mensagens Recebidas
             </span>
           </div>
@@ -171,14 +176,14 @@ export function TestimonialsSection() {
                       <Star key={i} className="w-4 h-4 fill-amber-400" />
                     ))}
                   </div>
-                  <span className="inline-flex items-center gap-1 text-[11px] text-emerald-400 bg-emerald-950/60 border border-emerald-500/30 px-2 py-0.5 rounded-md font-semibold">
-                    <ShieldCheck className="w-3 h-3" />
+                  <span className="inline-flex items-center gap-1 text-xs text-emerald-300 bg-emerald-950/80 border border-emerald-500/40 px-2.5 py-0.5 rounded-md font-bold">
+                    <ShieldCheck className="w-3.5 h-3.5" />
                     Pagou na Entrega
                   </span>
                 </div>
 
                 {/* Comment Text */}
-                <p className="text-xs sm:text-sm text-gray-200 leading-relaxed italic mb-4">
+                <p className="text-sm text-gray-100 leading-relaxed italic mb-4">
                   &ldquo;{t.comment}&rdquo;
                 </p>
               </div>
@@ -205,8 +210,8 @@ export function TestimonialsSection() {
                       {t.name}
                       <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
                     </h4>
-                    <div className="flex items-center gap-2 text-[11px] text-gray-400">
-                      <span className="flex items-center gap-1 text-amber-400 font-medium">
+                    <div className="flex items-center gap-2 text-xs text-gray-300">
+                      <span className="flex items-center gap-1 text-amber-400 font-bold">
                         {t.vehicle}
                       </span>
                       <span>•</span>
@@ -214,7 +219,7 @@ export function TestimonialsSection() {
                     </div>
                   </div>
                 </div>
-                <span className="text-[10px] text-gray-400 flex-shrink-0">{t.date}</span>
+                <span className="text-xs text-gray-400 flex-shrink-0">{t.date}</span>
               </div>
             </div>
           ))}
@@ -222,7 +227,7 @@ export function TestimonialsSection() {
 
         {/* Guarantee Banner Badge */}
         <div className="mt-8 sm:mt-12 text-center">
-          <div className="inline-flex flex-wrap items-center justify-center gap-4 py-3 px-6 rounded-xl bg-surface-100 border border-surface-border text-xs sm:text-sm text-gray-300">
+          <div className="inline-flex flex-wrap items-center justify-center gap-4 py-3 px-6 rounded-xl bg-surface-100 border border-surface-border text-xs sm:text-sm text-gray-200">
             <span className="flex items-center gap-1.5 text-emerald-400 font-bold">
               <CheckCircle2 className="w-4 h-4" /> 100% dos Pedidos Enviados com Rastreio
             </span>

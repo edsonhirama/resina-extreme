@@ -34,20 +34,20 @@ export function HowToUseSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-950/40 px-3.5 py-1 text-xs font-bold text-amber-400 mb-3">
-            <Clock className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-950/40 px-3.5 py-1 text-xs sm:text-sm font-bold text-amber-300 mb-3">
+            <Clock className="w-3.5 h-3.5 text-amber-400" />
             <span>PRATICIDADE ABSOLUTA</span>
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight text-white leading-tight">
             Como Aplicar em Menos de 15 Minutos na Sua Garagem
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-gray-300">
+          <p className="mt-3 text-sm sm:text-base text-gray-200">
             Você não precisa de habilidades profissionais ou ferramentas especiais. Veja o passo a
             passo simples e assista ao vídeo prático de aplicação.
           </p>
         </div>
 
-        {/* Grid: 3 Steps + 9:16 Video Demo com AutoPause */}
+        {/* Grid: 3 Steps + 9:16 Video Demo com Capa Personalizada */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-10">
           {/* Left: 3 Steps */}
           <div className="lg:col-span-7 space-y-4">
@@ -69,10 +69,10 @@ export function HowToUseSection() {
                       <h3 className="text-base sm:text-lg font-bold text-white mb-1">
                         {item.title}
                       </h3>
-                      <p className="text-xs sm:text-sm text-gray-300 leading-relaxed mb-2">
+                      <p className="text-xs sm:text-sm text-gray-200 leading-relaxed mb-2">
                         {item.desc}
                       </p>
-                      <div className="flex items-center gap-1.5 text-[11px] text-amber-400 font-medium">
+                      <div className="flex items-center gap-1.5 text-xs text-amber-400 font-medium">
                         <Check className="w-3.5 h-3.5 flex-shrink-0" />
                         <span>{item.tip}</span>
                       </div>
@@ -83,13 +83,13 @@ export function HowToUseSection() {
             })}
           </div>
 
-          {/* Right: 9:16 Vertical Video Embed com AutoPause */}
+          {/* Right: 9:16 Vertical Video Embed com Capa Personalizada e AutoPause */}
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative w-full max-w-[300px] rounded-3xl border-2 border-amber-500/40 bg-surface-card p-2 sm:p-3 shadow-glow-amber overflow-hidden">
               <div className="text-center pb-2">
-                <span className="text-[11px] font-bold text-amber-400 uppercase tracking-wider flex items-center justify-center gap-1">
-                  <Play className="w-3.5 h-3.5 fill-amber-400" />
-                  Vídeo Tutorial Rápido (9:16)
+                <span className="text-xs font-bold text-amber-300 uppercase tracking-wider flex items-center justify-center gap-1.5">
+                  <Play className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                  Vídeo Tutorial Rápido
                 </span>
               </div>
 
@@ -97,6 +97,7 @@ export function HowToUseSection() {
                 <AutoPauseYouTube
                   videoId="7W-KbEpvcQQ"
                   title="Como aplicar a Resina Extreme"
+                  posterImage="/images/capa-video-como-aplicar.png"
                   autoPlay={false}
                   muted={false}
                   loop={false}
@@ -117,7 +118,7 @@ export function HowToUseSection() {
               <h4 className="text-xs sm:text-sm font-bold text-white">
                 Pronto! Seu veículo protegido por 1 a 2 meses
               </h4>
-              <p className="text-[11px] sm:text-xs text-gray-300">
+              <p className="text-xs text-gray-200">
                 1 frasco de 500ml rende de 8 a 10 aplicações completas. Economia máxima.
               </p>
             </div>
