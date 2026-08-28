@@ -26,36 +26,33 @@ export function AutoPauseYouTube({
 }: AutoPauseYouTubeProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const iframeRef = useRef<HTMLIFrameElement>(null);
-  const [isPlaying, setIsPlaying] = useState(autoPlay || !posterImage);
-  const [imgError, setImgError] = useState(false);
+  const [hasStarted, setHasStarted] = useState(autoPlay && !posterImage);
+
+  const sendCommand = (func: "playVideo" | "pauseVideo") => {
+    if (iframeRef.current && iframeRef.current.contentWindow) {
+      iframeRef.current.contentWindow.postMessage(
+        JSON.stringify({ event: "command", func: func, args: "" }),
+        "*"
+      );
+    }
+  };
 
   useEffect(() => {
     const container = containerRef.current;
-    if (!container || !isPlaying) return;
-
-    const sendCommand = (func: "playVideo" | "pauseVideo") => {
-      if (iframeRef.current && iframeRef.current.contentWindow) {
-        iframeRef.current.contentWindow.postMessage(
-          JSON.stringify({ event: "command", func: func, args: "" }),
-          "*"
-        );
-      }
-    };
+    if (!container || !hasStarted) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Video is in view
             sendCommand("playVideo");
           } else {
-            // Video is out of view -> PAUSE automatically
             sendCommand("pauseVideo");
           }
         });
       },
       {
-        threshold: 0.25, // Pauses when less than 25% visible
+        threshold: 0.25,
       }
     );
 
@@ -64,14 +61,13 @@ export function AutoPauseYouTube({
     return () => {
       observer.disconnect();
     };
-  }, [isPlaying]);
+  }, [hasStarted]);
 
-  const handleStartPlay = () => {
-    setIsPlaying(true);
+  const handleStart = () => {
+    setHasStarted(true);
   };
 
-  // Embed URL setup
-  const autoPlayParam = isPlaying ? 1 : 0;
+  const autoPlayParam = hasStarted ? 1 : 0;
   const muteParam = muted ? 1 : 0;
   const loopParam = loop ? 1 : 0;
   const controlsParam = controls ? 1 : 0;
@@ -80,34 +76,36 @@ export function AutoPauseYouTube({
   const srcUrl = `https://www.youtube-nocookie.com/embed/${videoId}?enablejsapi=1&autoplay=${autoPlayParam}&mute=${muteParam}&loop=${loopParam}${playlistParam}&controls=${controlsParam}&modestbranding=1&rel=0&playsinline=1`;
 
   return (
-    <div ref={containerRef} className="relative w-full h-full bg-zinc-950">
-      {posterImage && !isPlaying && !imgError ? (
+    <div ref={containerRef} className="relative w-full h-full bg-zinc-950 overflow-hidden">
+      {/* Custom Poster Cover on Top */}
+      {posterImage && !hasStarted && (
         <div
-          onClick={handleStartPlay}
-          className="relative w-full h-full cursor-pointer group overflow-hidden flex items-center justify-center"
+          onClick={handleStart}
+          className="absolute inset-0 z-30 cursor-pointer group flex items-center justify-center bg-black"
         >
-          {/* Custom Poster Image */}
           <img
             src={posterImage}
             alt={title}
-            onError={() => setImgError(true)}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />
 
-          {/* Dark Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent group-hover:via-black/20 transition-colors" />
+          {/* Dark Overlay gradient */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/45 group-hover:via-black/15 transition-colors" />
 
-          {/* Central Pulsing Play Button */}
-          <div className="relative z-10 flex flex-col items-center gap-2">
-            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-amber-500 text-black flex items-center justify-center shadow-glow-amber group-hover:scale-110 transition-transform">
-              <Play className="w-6 h-6 sm:w-7 sm:h-7 fill-black ml-1" />
+          {/* Central Play Button */}
+          <div className="relative z-10 flex flex-col items-center gap-2.5">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 text-black flex items-center justify-center shadow-glow-amber group-hover:scale-110 transition-transform">
+              <Play className="w-7 h-7 sm:w-9 sm:h-9 fill-black ml-1 text-black" />
             </div>
-            <span className="text-xs sm:text-sm font-black text-white uppercase tracking-wider bg-black/80 backdrop-blur-sm px-3 py-1 rounded-full border border-amber-500/40">
-              Assistir Demonstração
+            <span className="text-xs sm:text-sm font-black text-white uppercase tracking-wider bg-black/85 backdrop-blur-md px-4 py-1.5 rounded-full border border-amber-500/50 shadow-lg">
+              Clique para Assistir
             </span>
           </div>
         </div>
-      ) : (
+      )}
+
+      {/* The YouTube iframe */}
+      {(hasStarted || !posterImage) && (
         <iframe
           ref={iframeRef}
           src={srcUrl}
