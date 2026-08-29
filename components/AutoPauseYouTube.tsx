@@ -22,7 +22,7 @@ export function AutoPauseYouTube({
   muted = false,
   loop = false,
   controls = true,
-  className = "w-full h-full object-cover border-0",
+  className = "w-full h-full border-0 block",
 }: AutoPauseYouTubeProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const iframeRef = useRef<HTMLIFrameElement>(null);
@@ -81,19 +81,19 @@ export function AutoPauseYouTube({
       {posterImage && !hasStarted && (
         <div
           onClick={handleStart}
-          className="absolute inset-0 z-30 cursor-pointer group flex items-center justify-center bg-black"
+          className="absolute inset-0 z-30 cursor-pointer group flex items-center justify-center bg-black select-none"
         >
           <img
             src={posterImage}
             alt={title}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 pointer-events-none"
           />
 
           {/* Dark Overlay gradient */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/45 group-hover:via-black/15 transition-colors" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/40 group-hover:via-black/10 transition-colors pointer-events-none" />
 
           {/* Central Play Button */}
-          <div className="relative z-10 flex flex-col items-center gap-2.5">
+          <div className="relative z-10 flex flex-col items-center gap-2.5 pointer-events-none text-center px-4">
             <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 text-black flex items-center justify-center shadow-glow-amber group-hover:scale-110 transition-transform">
               <Play className="w-7 h-7 sm:w-9 sm:h-9 fill-black ml-1 text-black" />
             </div>
