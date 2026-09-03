@@ -15,17 +15,20 @@
   <meta property="og:url" content="https://renovacar.shop/">
   <meta property="og:title" content="Resina Extreme — Brilho Espelhado de Concessionária | Pague na Entrega">
   <meta property="og:description" content="Devolva o brilho de zero km ao seu carro sem gastar com estética automotiva. Pague apenas ao receber em mãos!">
-  <meta property="og:image" content="assets/hero/hero-corolla-BJrxKhqz.png">
+  <meta property="og:image" content="assets/hero/hero-corolla.webp">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://renovacar.shop/">
   <meta property="twitter:title" content="Resina Extreme — Pague Somente na Entrega">
   <meta property="twitter:description" content="Brilho espelhado, proteção contra sol e chuva. Risco zero: você só paga quando o entregador chegar.">
-  <meta property="twitter:image" content="assets/hero/hero-corolla-BJrxKhqz.png">
+  <meta property="twitter:image" content="assets/hero/hero-corolla.webp">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2310b981'><path d='M12 2L1 21h22L12 2zm0 3.5l7.5 13.5H4.5L12 5.5z'/><circle cx='12' cy='16' r='1.5'/><path d='M11 10h2v4h-2z'/></svg>">
+
+  <!-- Preload do Recurso Crítico LCP (Carregamento Imediato no Mobile) -->
+  <link rel="preload" as="image" href="assets/hero/hero-corolla.webp" type="image/webp" fetchpriority="high">
 
   <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,7 +47,7 @@
         "@type": "Product",
         "@id": "https://renovacar.shop/#product",
         "name": "Resina Extreme — Vitrificação Líquida Automotiva",
-        "image": "https://renovacar.shop/assets/hero/hero-corolla-BJrxKhqz.png",
+        "image": "https://renovacar.shop/assets/hero/hero-corolla.webp",
         "description": "Devolva o brilho espelhado de concessionária ao seu carro em 5 minutos. Proteção UV, efeito hidrofóbico e película sintética sem risco de queimar o verniz. Pague somente na entrega.",
         "brand": {
           "@type": "Brand",
@@ -166,7 +169,7 @@
         "name": "Distribuidora Resina Extreme Ltda",
         "taxID": "48.603.727/0001-90",
         "url": "https://renovacar.shop/",
-        "logo": "https://renovacar.shop/assets/hero/hero-corolla-BJrxKhqz.png",
+        "logo": "https://renovacar.shop/assets/hero/hero-corolla.webp",
         "email": "contato@distribuidoraresinaextreme.com.br",
         "telephone": "+55 11 92172-0001",
         "address": {
@@ -225,6 +228,11 @@
   </header>
 
   <!-- ========================================== -->
+  <!-- MAIN CONTENT (LANDMARK SEMÂNTICO HTML5)     -->
+  <!-- ========================================== -->
+  <main id="main-content">
+
+  <!-- ========================================== -->
   <!-- 3. HERO SECTION (HEADLINE, VÍDEO & CTA) -->
   <!-- ========================================== -->
   <section class="relative pt-6 pb-12 md:pt-10 md:pb-16 overflow-hidden">
@@ -260,8 +268,8 @@
       <div class="max-w-3xl mx-auto mb-6">
         <div class="relative rounded-2xl overflow-hidden border-2 border-emerald-500/40 shadow-2xl bg-slate-900 aspect-video group">
           
-          <!-- Vídeo Player Local com Preload None -->
-          <video id="salesVideo" class="w-full h-full object-cover" poster="assets/hero/hero-corolla-BJrxKhqz.png" controls preload="none">
+          <!-- Vídeo Player Local com Preload None e Poster Otimizado em WebP -->
+          <video id="salesVideo" class="w-full h-full object-cover" poster="assets/hero/hero-corolla.webp" width="1000" height="562" controls preload="none">
             <source src="assets/videos/video-1.mp4" type="video/mp4">
             Seu navegador não suporta a tag de vídeo.
           </video>
@@ -646,19 +654,19 @@
         <p class="text-slate-400 text-sm mt-1">Fotos reais enviadas por quem comprou, aplicou em casa e se surpreendeu.</p>
       </div>
 
-      <!-- Grade de Carros Reais com Imagens Locais -->
+      <!-- Grade de Carros Reais com Imagens Locais Otimizadas em WebP -->
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         
         <!-- Carro 1: Uno / Vermelho -->
         <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 group">
           <div class="relative aspect-video overflow-hidden">
-            <img src="assets/before-after/after-uno.jpg" alt="Fiat Uno com brilho profundo após Resina Extreme" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <img src="assets/before-after/after-uno.webp" alt="Fiat Uno com brilho profundo após Resina Extreme" width="800" height="450" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             <span class="absolute bottom-2 left-2 bg-emerald-600 text-slate-950 text-xs font-black uppercase px-2 py-0.5 rounded">
               Pintura Vermelha Restaurada
             </span>
           </div>
           <div class="p-4">
-            <h4 class="font-bold text-white text-sm">Fiat Uno — Recuperação de Cor</h4>
+            <h3 class="font-bold text-white text-sm">Fiat Uno — Recuperação de Cor</h3>
             <p class="text-xs text-slate-400 mt-1">"A pintura estava fosca de sol. Apliquei em 10 minutos e voltou o vermelho vivo com reflexo espelhado."</p>
           </div>
         </div>
@@ -666,13 +674,13 @@
         <!-- Carro 2: Frontier / Pickup -->
         <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 group">
           <div class="relative aspect-video overflow-hidden">
-            <img src="assets/before-after/after-frontier.jpg" alt="Nissan Frontier com proteção e brilho espelhado" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <img src="assets/before-after/after-frontier.webp" alt="Nissan Frontier com proteção e brilho espelhado" width="800" height="450" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             <span class="absolute bottom-2 left-2 bg-emerald-600 text-slate-950 text-xs font-black uppercase px-2 py-0.5 rounded">
               Efeito Espelho Showroom
             </span>
           </div>
           <div class="p-4">
-            <h4 class="font-bold text-white text-sm">Nissan Frontier — Brilho Profundo</h4>
+            <h3 class="font-bold text-white text-sm">Nissan Frontier — Brilho Profundo</h3>
             <p class="text-xs text-slate-400 mt-1">"Pego estrada de terra todo fim de semana. Agora a poeira não gruda mais e lavo só jogando água."</p>
           </div>
         </div>
@@ -680,13 +688,13 @@
         <!-- Carro 3: Chevette / Clássico -->
         <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 group">
           <div class="relative aspect-video overflow-hidden">
-            <img src="assets/before-after/before-chevette.jpg" alt="Carro clássico Chevette restaurado com Resina Extreme" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <img src="assets/before-after/before-chevette.webp" alt="Carro clássico Chevette restaurado com Resina Extreme" width="800" height="450" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
             <span class="absolute bottom-2 left-2 bg-emerald-600 text-slate-950 text-xs font-black uppercase px-2 py-0.5 rounded">
               Carro Clássico Impecável
             </span>
           </div>
           <div class="p-4">
-            <h4 class="font-bold text-white text-sm">Carro Clássico — Proteção de Pintura</h4>
+            <h3 class="font-bold text-white text-sm">Carro Clássico — Proteção de Pintura</h3>
             <p class="text-xs text-slate-400 mt-1">"Pintura original preservada sem risco de queimar com politriz. Ficou lindo demais."</p>
           </div>
         </div>
@@ -740,16 +748,16 @@
               <p class="text-xs text-slate-400 mt-0.5">Ideal para testar no seu carro</p>
             </div>
 
-            <!-- Imagem Local do Kit 1 -->
+            <!-- Imagem Local do Kit 1 em WebP Otimizado -->
             <div class="py-5 flex justify-center">
               <div class="w-32 h-32 relative flex items-center justify-center bg-slate-950 rounded-2xl border border-slate-800 p-2">
-                <img src="assets/offers/offer-1-DRHPmWlE.png" alt="1 Frasco Resina Extreme 500ml" class="max-h-full object-contain">
+                <img src="assets/offers/offer-1.webp" alt="1 Frasco Resina Extreme 500ml" width="300" height="300" loading="lazy" decoding="async" class="max-h-full object-contain">
               </div>
             </div>
 
             <!-- Preço -->
             <div class="text-center mb-6">
-              <span class="text-xs text-slate-500 line-through block">De R$ 149,90</span>
+              <span class="text-xs text-slate-400 line-through block">De R$ 149,90</span>
               <div class="flex items-center justify-center gap-1 mt-1">
                 <span class="text-xs text-slate-300 font-bold">Por apenas</span>
                 <span class="text-3xl font-black text-white">R$ 89,99</span>
@@ -801,16 +809,16 @@
               <p class="text-xs text-slate-300 mt-0.5">O preferido de 78% dos clientes</p>
             </div>
 
-            <!-- Imagem Local do Kit 2 -->
+            <!-- Imagem Local do Kit 2 em WebP Otimizado -->
             <div class="py-5 flex justify-center">
               <div class="w-36 h-36 relative flex items-center justify-center bg-slate-950 rounded-2xl border border-emerald-500/30 p-2">
-                <img src="assets/offers/offer-2-BKVEUEzt.png" alt="Kit 2 Frascos Resina Extreme" class="max-h-full object-contain">
+                <img src="assets/offers/offer-2.webp" alt="Kit 2 Frascos Resina Extreme" width="300" height="300" loading="lazy" decoding="async" class="max-h-full object-contain">
               </div>
             </div>
 
             <!-- Preço -->
             <div class="text-center mb-6">
-              <span class="text-xs text-slate-500 line-through block">De R$ 180,00</span>
+              <span class="text-xs text-slate-400 line-through block">De R$ 180,00</span>
               <div class="flex items-center justify-center gap-1 mt-1">
                 <span class="text-xs text-slate-300 font-bold">Por apenas</span>
                 <span class="text-4xl font-black text-emerald-400">R$ 109,99</span>
@@ -863,16 +871,16 @@
               <p class="text-xs text-slate-400 mt-0.5">Leve 3 e Pague Praticamente 2</p>
             </div>
 
-            <!-- Imagem Local do Kit 3 -->
+            <!-- Imagem Local do Kit 3 em WebP Otimizado -->
             <div class="py-5 flex justify-center">
               <div class="w-32 h-32 relative flex items-center justify-center bg-slate-950 rounded-2xl border border-slate-800 p-2">
-                <img src="assets/offers/offer-3-yOS0-wU5.png" alt="Kit 3 Frascos Resina Extreme" class="max-h-full object-contain">
+                <img src="assets/offers/offer-3.webp" alt="Kit 3 Frascos Resina Extreme" width="300" height="300" loading="lazy" decoding="async" class="max-h-full object-contain">
               </div>
             </div>
 
             <!-- Preço -->
             <div class="text-center mb-6">
-              <span class="text-xs text-slate-500 line-through block">De R$ 270,00</span>
+              <span class="text-xs text-slate-400 line-through block">De R$ 270,00</span>
               <div class="flex items-center justify-center gap-1 mt-1">
                 <span class="text-xs text-slate-300 font-bold">Por apenas</span>
                 <span class="text-3xl font-black text-yellow-400">R$ 147,00</span>
@@ -1084,13 +1092,13 @@
       </h3>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div class="rounded-2xl overflow-hidden border border-slate-800 bg-slate-950 flex items-center justify-center">
-          <img src="assets/testimonials/whatsapp-print.webp" alt="Print de WhatsApp de cliente satisfeito" class="w-full h-auto object-cover hover:scale-105 transition-transform">
+          <img src="assets/testimonials/whatsapp-print.webp" alt="Print de WhatsApp de cliente satisfeito" width="400" height="600" loading="lazy" decoding="async" class="w-full h-auto object-cover hover:scale-105 transition-transform">
         </div>
         <div class="rounded-2xl overflow-hidden border border-slate-800 bg-slate-950 flex items-center justify-center">
-          <img src="assets/testimonials/whatsapp-print-2.webp" alt="Feedback de cliente sobre o brilho" class="w-full h-auto object-cover hover:scale-105 transition-transform">
+          <img src="assets/testimonials/whatsapp-print-2.webp" alt="Feedback de cliente sobre o brilho" width="400" height="600" loading="lazy" decoding="async" class="w-full h-auto object-cover hover:scale-105 transition-transform">
         </div>
         <div class="rounded-2xl overflow-hidden border border-slate-800 bg-slate-950 flex items-center justify-center">
-          <img src="assets/testimonials/whatsapp-print-3.webp" alt="Vídeo enviado por cliente após aplicação" class="w-full h-auto object-cover hover:scale-105 transition-transform">
+          <img src="assets/testimonials/whatsapp-print-3.webp" alt="Vídeo enviado por cliente após aplicação" width="400" height="600" loading="lazy" decoding="async" class="w-full h-auto object-cover hover:scale-105 transition-transform">
         </div>
       </div>
     </div>
@@ -1208,6 +1216,8 @@
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- ========================================== -->
   <!-- 11. FOOTER INSTITUCIONAL                   -->
