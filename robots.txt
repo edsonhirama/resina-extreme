@@ -1,0 +1,27 @@
+# robots.txt para Distribuidora Resina Extreme
+# https://distribuidorresinaextreme.shop/
+
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /politica-de-privacidade.html
+Allow: /termos-de-uso.html
+
+# Rastreadores Oficiais do Google Ads / Verificação de Anúncios
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: AdsBot-Google-Mobile
+Allow: /
+
+User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+# Sitemap
+Sitemap: https://distribuidorresinaextreme.shop/sitemap.xml
