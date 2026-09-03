@@ -1,5 +1,5 @@
 # robots.txt para Distribuidora Resina Extreme
-# https://distribuidorresinaextreme.shop/
+# https://renovacar.shop/
 
 User-agent: *
 Allow: /
@@ -24,4 +24,4 @@ User-agent: Googlebot-Image
 Allow: /
 
 # Sitemap
-Sitemap: https://distribuidorresinaextreme.shop/sitemap.xml
+Sitemap: https://renovacar.shop/sitemap.xml
