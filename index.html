@@ -1,31 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18194992125"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'AW-18194992125');
-  </script>
-
-  <!-- Microsoft Clarity -->
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "z7wab0ym1q");
-  </script>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resina Extreme | Brilho Espelhado de Carro 0km - Pague na Entrega</title>
   <meta name="description" content="Devolva o brilho espelhado de concessionária ao seu carro em 5 minutos sem politriz. Proteção UV e efeito hidrofóbico. Risco ZERO: você só paga na entrega!">
   <meta name="robots" content="index, follow">
-  
+
+  <!-- CSS Compilado & Minificado (Descoberta Imediata no Topo) -->
+  <link rel="stylesheet" href="assets/style.min.css">
+
+  <!-- Preload da Imagem Poster do Vídeo Hero (LCP Imediato em <1s) -->
+  <link rel="preload" as="image" href="assets/hero/hero-vertical-poster.webp" type="image/webp" fetchpriority="high">
+
+  <!-- Google Fonts: Inter (Carregamento Otimizado sem Bloqueio de Renderização) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+  </noscript>
+
   <!-- Metatags Sociais Open Graph & Twitter -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://renovacar.shop/">
@@ -41,17 +36,24 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="shortcut icon" href="assets/favicon.svg">
 
-  <!-- Preload da Imagem Poster do Vídeo Hero (LCP Otimizado com Prioridade Alta) -->
-  <link rel="preload" as="image" href="assets/hero/hero-vertical-poster.webp" type="image/webp" fetchpriority="high">
+  <!-- Scripts Assíncronos de Analytics (Não Bloqueiam a Renderização do CSS/HTML) -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18194992125"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18194992125');
+  </script>
 
-  <!-- Google Fonts: Inter (Carregamento Otimizado sem Bloqueio de Renderização) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" media="print" onload="this.media='all'">
-  <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
-  </noscript>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "z7wab0ym1q");
+  </script>
 
   <!-- Dados Estruturados Schema.org JSON-LD (Google Rich Snippets: Product, Offers, Organization, FAQPage) -->
   <script type="application/ld+json">
@@ -129,9 +131,6 @@
     ]
   }
   </script>
-
-  <!-- CSS Compilado & Minificado (Performance Máxima) -->
-  <link rel="stylesheet" href="assets/style.min.css">
 </head>
 <body class="bg-gray-50 text-gray-900 antialiased selection:bg-[#25D366] selection:text-white">
 
@@ -231,16 +230,15 @@
             <video 
               id="hero-video"
               class="w-full h-full object-cover"
-              src="assets/videos/hero-optimized.mp4" 
               poster="assets/hero/hero-vertical-poster.webp"
-              preload="metadata"
-              autoplay
+              preload="none"
               loop 
               muted 
               playsinline
               width="720"
               height="1280"
               aria-label="Vídeo demonstrativo mostrando a aplicação da Resina Extreme e o efeito espelho instantâneo">
+              <source data-src="assets/videos/hero-optimized.mp4" type="video/mp4">
               Seu navegador não suporta a tag de vídeo HTML5.
             </video>
 
@@ -899,7 +897,7 @@
               </div>
 
               <div class="w-36 h-36 mx-auto mb-4 overflow-hidden rounded-2xl">
-                <img src="assets/offers/offer-1.webp" alt="1 Frasco Resina Extreme 500ml" class="w-full h-full object-contain hover:scale-105 transition">
+                <img src="assets/offers/offer-1.webp" alt="1 Frasco Resina Extreme 500ml" class="w-full h-full object-contain hover:scale-105 transition" loading="lazy" decoding="async" width="144" height="144">
               </div>
 
               <h3 class="text-2xl font-black text-gray-900 mb-1">
@@ -974,7 +972,7 @@
               </div>
 
               <div class="w-36 h-36 mx-auto mb-4 overflow-hidden rounded-2xl">
-                <img src="assets/offers/offer-2.webp" alt="Kit Duplo 2x 500ml Resina Extreme" class="w-full h-full object-contain hover:scale-105 transition">
+                <img src="assets/offers/offer-2.webp" alt="Kit Duplo 2x 500ml Resina Extreme" class="w-full h-full object-contain hover:scale-105 transition" loading="lazy" decoding="async" width="144" height="144">
               </div>
 
               <h3 class="text-2xl sm:text-3xl font-black text-gray-900 mb-1">
@@ -1052,7 +1050,7 @@
               </div>
 
               <div class="w-36 h-36 mx-auto mb-4 overflow-hidden rounded-2xl">
-                <img src="assets/offers/offer-3.webp" alt="Kit 3 Frascos Resina Extreme" class="w-full h-full object-contain hover:scale-105 transition">
+                <img src="assets/offers/offer-3.webp" alt="Kit 3 Frascos Resina Extreme" class="w-full h-full object-contain hover:scale-105 transition" loading="lazy" decoding="async" width="144" height="144">
               </div>
 
               <h3 class="text-2xl font-black text-gray-900 mb-1">
@@ -1505,6 +1503,14 @@
       const btn = document.getElementById('hero-sound-btn');
       if (!vid) return;
 
+      // Garante que a fonte do vídeo está carregada
+      const source = vid.querySelector('source[data-src]');
+      if (source) {
+        source.src = source.getAttribute('data-src');
+        source.removeAttribute('data-src');
+        vid.load();
+      }
+
       if (vid.muted) {
         vid.muted = false;
         vid.volume = 1.0;
@@ -1535,6 +1541,30 @@
       }
     }
 
+    // Carregamento inteligente do vídeo Hero (sem competir com LCP inicial de 0.8s)
+    let heroVideoStarted = false;
+    function startHeroVideo() {
+      if (heroVideoStarted) return;
+      heroVideoStarted = true;
+
+      const vid = document.getElementById('hero-video');
+      if (!vid) return;
+
+      const source = vid.querySelector('source[data-src]');
+      if (source) {
+        source.src = source.getAttribute('data-src');
+        source.removeAttribute('data-src');
+        vid.load();
+        vid.play().catch(() => {});
+      }
+    }
+
+    // Gatilhos de carregamento suave na primeira interação ou após 1.8s
+    ['scroll', 'touchstart', 'mousemove', 'click'].forEach(evt => {
+      window.addEventListener(evt, startHeroVideo, { once: true, passive: true });
+    });
+    setTimeout(startHeroVideo, 1800);
+
     // Inicialização ao carregar o DOM
     document.addEventListener('DOMContentLoaded', function () {
       const countdownElement = document.getElementById('countdown-timer');
@@ -1542,18 +1572,18 @@
         startTimer(14 * 60 + 59, countdownElement);
       }
 
-      // Otimização do vídeo Hero: reprodução inteligente em viewport sem bloquear LCP
+      // Pausa e retoma o vídeo quando sai ou entra na tela
       const heroVid = document.getElementById('hero-video');
       if (heroVid && 'IntersectionObserver' in window) {
         const vidObserver = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              heroVid.play().catch(() => {});
-            } else {
+            if (!entry.isIntersecting) {
               heroVid.pause();
+            } else if (heroVideoStarted && heroVid.paused && heroVid.currentTime > 0) {
+              heroVid.play().catch(() => {});
             }
           });
-        }, { threshold: 0.2 });
+        }, { threshold: 0.15 });
         vidObserver.observe(heroVid);
       }
     });
